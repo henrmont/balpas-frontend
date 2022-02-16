@@ -1,0 +1,8 @@
+button {
+    padding: 5px 20px 5px 20px;
+    background-color: rgb(150, 240, 150);
+}
+
+button mat-icon {
+    vertical-align: -7px;
+}

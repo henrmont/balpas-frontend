@@ -1,0 +1,47 @@
+.remove-plantao {
+  z-index: 1000;
+}
+
+.remove-plantao .info {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.remove-plantao .info span {
+  padding-left: 10px;
+}
+
+.remove-plantao div {
+  display: flex;
+  justify-content: center;
+}
+
+.remove-plantao div.button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove-plantao div.datetime {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
+.remove-plantao div button {
+  margin-top: 10px;
+}
+
+.remove-plantao div button mat-icon {
+  vertical-align: -7px;
+}
+
+.remove-plantao div .close {
+  background-color: rgb(240, 150, 150);
+}
+
+.remove-plantao div .del {
+  background-color: rgb(220, 220, 140);
+}

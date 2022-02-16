@@ -1,0 +1,11 @@
+.file-input {
+  display: none;
+}
+
+button {
+  margin-left: 1rem;
+}
+
+mat-icon {
+  vertical-align: middle;
+}

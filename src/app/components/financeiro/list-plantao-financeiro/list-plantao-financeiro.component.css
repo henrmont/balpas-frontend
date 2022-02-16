@@ -1,0 +1,75 @@
+mat-expansion-panel {
+    margin: 10px;
+}
+
+mat-icon {
+    vertical-align: -0.3rem;
+}
+
+.headers-align .mat-expansion-panel-header-title,
+.headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.headers-align .mat-expansion-panel-header-description {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.headers-align .mat-expansion-panel-header-description .finish {
+    width: 15rem;
+    color: green;
+}
+
+.headers-align .mat-expansion-panel-header-description .pending {
+    width: 15rem;
+    color: gray;
+}
+
+.headers-align .mat-expansion-panel-header-description .without {
+    width: 15rem;
+    color: red;
+}
+
+.content {
+    border-top: 1px solid gray;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    gap: 10rem;
+}
+
+.content div {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content div.chart {
+    display: flex;
+    justify-content: center;
+}
+
+.content div.btn {
+    display: flex;
+    justify-content: center;
+}
+
+.content div.btn mat-icon {
+    vertical-align: -0.4rem;
+}
+
+.content div.btn .attach {
+    background-color: rgb(150,150,240);
+    margin-bottom: 20px;
+}
+
+.content div.btn .taxes {
+    background-color: rgb(240,150,150);
+    margin-bottom: 20px;
+}
+
+.content div.btn .status {
+    background-color: rgb(150,250,150);
+}

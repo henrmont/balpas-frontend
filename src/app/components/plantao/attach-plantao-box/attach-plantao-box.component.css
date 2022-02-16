@@ -1,0 +1,49 @@
+.attach-plantao {
+  z-index: 1000;
+}
+
+.attach-plantao .info {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.attach-plantao .info span {
+  padding-left: 10px;
+}
+
+.attach-plantao div {
+  display: flex;
+  justify-content: center;
+}
+
+.attach-plantao div.button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.attach-plantao div.datetime {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
+.attach-plantao div.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.attach-plantao div button mat-icon {
+  vertical-align: -7px;
+}
+
+.attach-plantao div .close {
+  background-color: rgb(240, 150, 150);
+}
+
+.attach-plantao div .del {
+  background-color: rgb(220, 220, 140);
+}

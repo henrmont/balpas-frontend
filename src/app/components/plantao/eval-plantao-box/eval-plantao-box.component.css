@@ -1,0 +1,46 @@
+.eval-plantao {
+  z-index: 1000;
+}
+
+.eval-plantao mat-radio-group {
+  display: flex;
+  flex-direction: column;
+  color: rgb(180,180,100);
+}
+
+.eval-plantao .eval {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.eval-plantao .button{
+  display: flex;
+  justify-content: space-between;
+}
+
+.eval-plantao div {
+  display: flex;
+  justify-content: center;
+}
+
+.eval-plantao div.datetime {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
+.eval-plantao div button {
+  margin-top: 10px;
+}
+
+.eval-plantao div button mat-icon {
+  vertical-align: -7px;
+}
+
+.eval-plantao div .close {
+  background-color: rgb(240, 150, 150);
+}
+
+.eval-plantao div .evalute {
+  background-color: rgb(150, 240, 150);
+}

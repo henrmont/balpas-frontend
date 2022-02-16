@@ -1,0 +1,22 @@
+<div class="img">
+    <img src="assets/balpas.png">
+</div>
+<div class="register mat-elevation-z4">
+    <h1>Criar conta</h1>
+    <form #form='ngForm' (ngSubmit)="onSubmit()">
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput name="email" type="email" [(ngModel)]="user.username" autocomplete="off" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput name="password" type="password" [(ngModel)]="user.password" autocomplete="off" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput name="cpassword" type="password" [(ngModel)]="cpassword" autocomplete="off" required>
+        </mat-form-field>
+        <button mat-raised-button type="submit" [disabled]="form.form.invalid">Criar conta</button>
+        <a mat-raised-button routerLink="/login">Voltar</a>
+    </form>
+</div>

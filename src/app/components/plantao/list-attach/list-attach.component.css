@@ -1,0 +1,16 @@
+.table {
+    margin-top: 1rem;
+}
+
+  table {
+    margin-top: 2rem;
+    width: 30rem;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
+  button mat-icon {
+    vertical-align: middle;
+  }

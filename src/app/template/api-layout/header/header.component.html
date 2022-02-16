@@ -1,0 +1,74 @@
+<header>
+    <mat-toolbar class="mat-elevation-z4">
+        <div fxHide.gt-xs>
+            <button mat-icon-button (click)="onToggleSidenav()" class="rbutton">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+        <div fxFlex fxLayout fxHide.xs>
+            <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+                <li>
+                    <button mat-button class="button" routerLink="home">
+                        <mat-icon>home</mat-icon>
+                        Início
+                    </button>
+                </li>
+                <li>
+                    <button mat-button class="button" routerLink="financeiro">
+                        <mat-icon>monetization_on</mat-icon>
+                        Financeiro
+                    </button>
+                </li>
+                <li>
+                    <button mat-button class="button" routerLink="agenda">
+                        <mat-icon>today</mat-icon>
+                        Agenda
+                    </button>
+                </li>
+                <li>
+                    <button mat-button class="button" routerLink="plantao">
+                        <mat-icon>masks</mat-icon>
+                        Plantões
+                    </button>
+                </li>
+                <li>
+                  <button mat-button class="button" routerLink="pega/plantao" disabled>
+                    <mat-icon>gavel</mat-icon>
+                    Assessoria Jurídica
+                  </button>
+                </li>
+                <li>
+                  <button mat-button class="button" routerLink="pega/plantao" disabled>
+                    <mat-icon>medical_services</mat-icon>
+                    Pega Plantão
+                  </button>
+                </li>
+            </ul>
+        </div>
+        <div fxFlex fxLayout fxHide.xs class="avatar">
+          <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li>
+              <button mat-button class="button" [matMenuTriggerFor]="menu">
+                <mat-icon>account_circle</mat-icon>
+                Conta
+              </button>
+              <mat-menu #menu="matMenu">
+                <button *ngIf="roles[1]" mat-menu-item class="admin" routerLink="/admin">
+                  <mat-icon>admin_panel_settings</mat-icon>
+                  <span>Administrar</span>
+                </button>
+                <button mat-menu-item routerLink="/logout">
+                  <mat-icon>exit_to_app</mat-icon>
+                  <span>Sair</span>
+                </button>
+              </mat-menu>
+            </li>
+          </ul>
+        </div>
+        <div fxFlex fxLayout fxLayoutAlign="end">
+            <span>
+                <img src="assets/balpas.png">
+            </span>
+        </div>
+    </mat-toolbar>
+</header>

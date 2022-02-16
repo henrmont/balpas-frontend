@@ -1,0 +1,51 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+a:hover, a:active{
+    color: lightgray;
+}
+.navigation-items{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+mat-toolbar {
+    background-color: rgb(231, 64, 84);
+    display: flex;
+    justify-content: space-between;
+}
+
+img {
+    height: 60px;
+    vertical-align: middle;
+}
+
+.rbutton {
+    color: white;
+}
+
+.button {
+    color: white;
+    padding: 5px 20px 5px 20px;
+}
+
+.button mat-icon {
+    vertical-align: sub;
+}
+
+.avatar {
+  margin-left: 10rem;
+}
+
+.admin mat-icon, .admin span  {
+    color: rgb(200,10,10);
+}
+

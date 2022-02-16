@@ -1,0 +1,26 @@
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+section .title {
+    display: flex;
+    justify-content: center;
+}
+
+section .resource {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    margin-bottom: 1rem;
+}
+
+section .resource .search, section .resource .new {
+    display: flex;
+    justify-content: center;
+}
+
+section .content {
+    display: flex;
+    flex-direction: column;
+}

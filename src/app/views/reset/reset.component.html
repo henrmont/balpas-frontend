@@ -1,0 +1,5 @@
+<section class="reset">
+    <div *ngIf="token then thenBlock else elseBlock"></div>
+</section>
+<ng-template #thenBlock><app-reset-password></app-reset-password></ng-template>
+<ng-template #elseBlock><app-request-reset-password></app-request-reset-password></ng-template>

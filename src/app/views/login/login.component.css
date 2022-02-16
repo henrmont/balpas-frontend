@@ -1,0 +1,7 @@
+.login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right bottom, rgb(231, 64, 84), rgb(30, 0, 0));
+}

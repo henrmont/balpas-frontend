@@ -1,0 +1,33 @@
+section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+section .title {
+    display: flex;
+    justify-content: center;
+}
+
+section .content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 5rem;
+}
+
+section .content .chart {
+    width: 100%;
+}
+
+section .content .item {
+    background-color: rgb(230,230,230);
+    height: 7rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+section .content .item:first-child {
+    margin-top: 0;
+}

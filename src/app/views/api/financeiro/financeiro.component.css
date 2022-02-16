@@ -1,0 +1,14 @@
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+section .title {
+    display: flex;
+    justify-content: center;
+}
+
+section .content {
+    display: flex;
+    flex-direction: column;
+}

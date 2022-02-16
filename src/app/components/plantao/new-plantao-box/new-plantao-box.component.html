@@ -1,0 +1,71 @@
+<div class="new-plantao">
+    <div>
+        <h2>Novo plantão</h2>
+    </div>
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <div class="cols2">
+            <mat-form-field class="example-full-width" appearance="fill" required>
+                <mat-label>Tipo de plantão</mat-label>
+                <mat-select [(ngModel)]="plantao.type" name="type">
+                    <mat-option *ngFor="let type of types" [value]="type.value" (click)="onChange(type.value)">
+                        {{type.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div *ngIf="isEnable then thenEnable else elseEnable"></div>
+            <ng-template #thenEnable>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Outros</mat-label>
+                    <input matInput [(ngModel)]="plantao.other" name="other">
+                </mat-form-field>
+            </ng-template>
+            <ng-template #elseEnable>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Outros</mat-label>
+                    <input matInput [(ngModel)]="plantao.other" name="other" disabled>
+                </mat-form-field>
+            </ng-template>
+        </div>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Local</mat-label>
+            <input matInput [(ngModel)]="plantao.local" name="local" required>
+        </mat-form-field>
+        <div class="datetime">
+            <mat-form-field appearance="fill">
+                <mat-label>Data início</mat-label>
+                <input matInput [matDatepicker]="dentrada" readonly [(ngModel)]="plantao.dinicio" name="dinicio" required>
+                <mat-datepicker-toggle matSuffix [for]="dentrada"></mat-datepicker-toggle>
+                <mat-datepicker #dentrada></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Hora início</mat-label>
+                <input matInput [ngxTimepicker]="hentrada" [format]="24" readonly [(ngModel)]="plantao.hinicio" name="hinicio" required>
+                <ngx-material-timepicker #hentrada [appendToInput]="true" [theme]="balpas"></ngx-material-timepicker>
+            </mat-form-field>
+        </div>
+        <div class="cols2">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Duração</mat-label>
+                <input matInput [(ngModel)]="plantao.duration" name="duration" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Valor</mat-label>
+                <input matInput [(ngModel)]="plantao.value" name="value" required>
+            </mat-form-field>
+        </div>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Empresa</mat-label>
+            <input matInput [(ngModel)]="plantao.company" name="company" required>
+        </mat-form-field>
+        <div>
+            <button mat-raised-button type="button" (click)="close()" class="close">
+                <mat-icon>close</mat-icon>
+                Fechar
+            </button>
+            <button mat-raised-button type="submit" class="add" [disabled]="form.form.invalid">
+                <mat-icon>add</mat-icon>
+                Registrar plantão
+            </button>
+        </div>
+    </form>
+</div>

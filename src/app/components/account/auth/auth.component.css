@@ -1,0 +1,44 @@
+.img {
+    display: flex;
+    justify-content: center;
+}
+
+.img img {
+    height: 100px;
+    margin-top: 5rem;
+}
+
+.auth {
+    margin-top: 2rem;
+    padding: 2rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(200,200,200);
+    border-radius: 1rem;
+}
+
+.auth h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.auth div {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(200,200,200);
+    width: 30%;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.auth form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(200,200,200);
+    width: 100%;
+}
+
+.auth form button, .auth form a {
+    margin-top: 1rem;
+}

@@ -1,0 +1,33 @@
+<div class="remove-plantao">
+  <div>
+    <h2>Remover plantão</h2>
+  </div>
+  <div class="info">
+    <label>Tipo de plantão</label>
+    <span>{{plantao.type}}</span>
+  </div>
+  <div class="info">
+    <label>Local do plantão</label>
+    <span>{{plantao.local}}</span>
+  </div>
+  <div class="datetime">
+    <div class="info">
+      <label>Data do início</label>
+      <span>{{plantao.dinicio|date: 'YYYY-MM-dd'}}</span>
+    </div>
+    <div class="info">
+      <label>Hora do início</label>
+      <span>{{plantao.hinicio|date: 'HH:mm'}}</span>
+    </div>
+  </div>
+  <div class="button">
+    <button mat-raised-button type="button" (click)="close()" class="close">
+      <mat-icon>close</mat-icon>
+      Fechar
+    </button>
+    <button mat-raised-button type="button" (click)="onSubmit()" class="del">
+      <mat-icon>delete</mat-icon>
+      Remover
+    </button>
+  </div>
+</div>

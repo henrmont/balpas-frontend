@@ -1,0 +1,35 @@
+<div class="status-payment">
+    <div>
+        <h2>Status pagamento</h2>
+    </div>
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <div class="cols2">
+            <mat-form-field class="example-full-width" appearance="fill" required>
+                <mat-label>Nota</mat-label>
+                <mat-select [(ngModel)]="status.note" name="note">
+                    <mat-option *ngFor="let type of notes" [value]="type.value">
+                        {{type.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill" required>
+                <mat-label>Pagamento</mat-label>
+                <mat-select [(ngModel)]="status.payment" name="payment">
+                    <mat-option *ngFor="let type of payments" [value]="type.value">
+                        {{type.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-raised-button type="button" (click)="close()" class="close">
+                <mat-icon>close</mat-icon>
+                Fechar
+            </button>
+            <button mat-raised-button type="submit" class="add" [disabled]="form.form.invalid">
+                <mat-icon>check</mat-icon>
+                Definir status
+            </button>
+        </div>
+    </form>
+</div>

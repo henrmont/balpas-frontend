@@ -1,0 +1,42 @@
+.new-plantao {
+    z-index: 1000;
+}
+
+.new-plantao div {
+    display: flex;
+    justify-content: center;
+}
+
+.new-plantao form {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-plantao form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-plantao form div.cols2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+.new-plantao form div.datetime {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 10px;
+}
+
+.new-plantao form div button mat-icon {
+    vertical-align: -7px;
+}
+
+.new-plantao form div .close {
+    background-color: rgb(240, 150, 150);
+}
+
+.new-plantao form div .add {
+    background-color: rgb(150, 240, 150);
+}

@@ -1,0 +1,20 @@
+<div class="taxes-plantao">
+    <div>
+      <h2>Impostos do Plantão</h2>
+    </div>
+    <div class="add">
+        <button mat-raised-button type="button" (click)="newTaxesPlantao(data.id)" class="new">
+            <mat-icon>add</mat-icon>
+            Adicionar imposto
+        </button>
+    </div>
+    <div>
+      <app-list-taxes></app-list-taxes>
+    </div>
+    <div class="button">
+      <button mat-raised-button type="button" (click)="close()" class="close">
+        <mat-icon>close</mat-icon>
+        Fechar
+      </button>
+    </div>
+  </div>

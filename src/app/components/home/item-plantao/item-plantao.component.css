@@ -1,0 +1,27 @@
+.item {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    gap: 5rem;
+}
+
+.item mat-icon {
+    font-size: 5rem;
+    color: gray;
+}
+
+.item div:last-child {
+    padding: 10px;
+    padding-left: 0;
+    padding-top: 0;
+}
+
+.item div:last-child h1 {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.item div:last-child h3 {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
