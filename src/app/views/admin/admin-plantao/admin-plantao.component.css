@@ -1,0 +1,48 @@
+section.resource {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+section.resource div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.content mat-icon, section.resource mat-icon {
+    vertical-align: -6px;
+    margin-right: 0.5rem;
+}
+
+mat-panel-title {
+    width: 60%;
+}
+
+mat-panel-description {
+    width: 20%;
+}
+
+section.content div.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+section.content div.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+section.content div.item span:first-child {
+    font-size: 20px;
+}
+
+section.content div.item span:last-child {
+    padding: 0.5rem 1.5rem;
+}
+
+section.content div.buttons {
+    display: flex;
+    justify-content: space-between;
+}

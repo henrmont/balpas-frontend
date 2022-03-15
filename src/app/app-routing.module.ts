@@ -1,34 +1,139 @@
-import { AdminComponent } from './views/api/admin/admin.component';
-import { PlantaoComponent } from './views/api/plantao/plantao.component';
-import { AgendaComponent } from './views/api/agenda/agenda.component';
-import { HomeComponent } from './views/api/home/home.component';
+import { DocComponent } from './views/doc/doc.component';
+import { AdminInscricaoComponent } from './views/admin/admin-inscricao/admin-inscricao.component';
+import { SettingsProfileComponent } from './views/settings/settings-profile/settings-profile.component';
+import { SettingsComponent } from './views/settings/settings.component';
+import { AdminPlantaoComponent } from './views/admin/admin-plantao/admin-plantao.component';
+import { AdminFaturaComponent } from './views/admin/admin-fatura/admin-fatura.component';
+import { AdminComponent } from './views/admin/admin.component';
+import { PegaplantaoComponent } from './views/pegaplantao/pegaplantao.component';
+import { FaturaComponent } from './views/fatura/fatura.component';
+import { PlantaoComponent } from './views/plantao/plantao.component';
+import { ScheduleComponent } from './views/schedule/schedule.component';
+import { HomeComponent } from './views/home/home.component';
+import { AppLayoutComponent } from './template/app-layout/app-layout.component';
 import { LogoutComponent } from './views/logout/logout.component';
 import { ResetComponent } from './views/reset/reset.component';
 import { RegisterComponent } from './views/register/register.component';
 import { AccountGuard } from './components/account/account.guard';
-import { ApiComponent } from './views/api/api.component';
 import { LoginComponent } from './views/login/login.component';
 import { SiteComponent } from './views/site/site.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {PegaplantaoComponent} from "./views/api/pegaplantao/pegaplantao.component";
-import {FinanceiroComponent} from "./views/api/financeiro/financeiro.component";
+import { DocHomeComponent } from './views/doc/doc-home/doc-home.component';
 
 const routes: Routes = [
   {
-    path: 'api',
-    component: ApiComponent,
+    path: 'inicio',
+    component: AppLayoutComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
-      { path: 'agenda', component: AgendaComponent },
-      { path: 'plantao', component: PlantaoComponent },
-      { path: 'pega/plantao', component: PegaplantaoComponent },
-      { path: 'financeiro', component: FinanceiroComponent },
-      { path: 'admin', component: AdminComponent }
+      { path: '', component: HomeComponent },
     ],
     canActivate: [AccountGuard]
   },
+  {
+    path: 'agenda',
+    component: AppLayoutComponent,
+    children: [
+      { path: '', component: ScheduleComponent },
+    ],
+    canActivate: [AccountGuard]
+  },
+  {
+    path: 'plantao',
+    component: AppLayoutComponent,
+    children: [
+      { path: '', component: PlantaoComponent },
+    ],
+    canActivate: [AccountGuard]
+  },
+  {
+    path: 'fatura',
+    component: AppLayoutComponent,
+    children: [
+      { path: '', component: FaturaComponent },
+    ],
+    canActivate: [AccountGuard]
+  },
+  {
+    path: 'pega/plantao',
+    component: AppLayoutComponent,
+    children: [
+      { path: '', component: PegaplantaoComponent },
+    ],
+    canActivate: [AccountGuard]
+  },
+  {
+    path: 'settings',
+    component: AppLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: SettingsComponent,
+        children: [
+          { path: '', redirectTo: 'profile', pathMatch: 'full' },
+          { path: 'profile', component: SettingsProfileComponent },
+          // { path: 'plantao', component: AdminPlantaoComponent },
+        ]
+      }
+    ],
+    canActivate: [AccountGuard]
+  },
+  {
+    path: 'admin',
+    component: AppLayoutComponent,
+    children: [
+      { 
+        path: '',
+        component: AdminComponent,
+        children: [
+          { path: '', redirectTo: 'fatura', pathMatch: 'full' },
+          { path: 'fatura', component: AdminFaturaComponent },
+          { path: 'plantao', component: AdminPlantaoComponent },
+          { path: 'inscricao', component: AdminInscricaoComponent },
+        ]
+      },
+    ],
+    canActivate: [AccountGuard]
+  },
+  {
+    path: 'doc',
+    component: AppLayoutComponent,
+    children: [
+      { 
+        path: '',
+        component: DocComponent,
+        children: [
+          { path: '', redirectTo: 'home', pathMatch: 'full' },
+          { path: 'home', component: DocHomeComponent },
+        ]
+      },
+    ],
+    canActivate: [AccountGuard]
+  },
+  // {
+  //   path: 'watch',
+  //   component: AppLayoutComponent,
+  //   data: [
+  //     { destack: true }
+  //   ],
+  //   children: [
+  //     { path: '', component: WatchComponent },
+  //   ],
+  //   canActivate: [AccountGuard]
+  // },
+  // {
+  //   path: 'profile',
+  //   component: AppLayoutComponent,
+  //   data: [
+  //     { destack: false }
+  //   ],
+  //   children: [
+  //     { path: '', component: ProfileComponent },
+  //     { path: ':alias', component: ProfileComponent },
+  //   ],
+  //   canActivate: [AccountGuard]
+  // },
+  // 
   {
     path: '',
     component: SiteComponent,
@@ -40,6 +145,10 @@ const routes: Routes = [
   {
     path: 'logout',
     component: LogoutComponent
+  },
+  {
+    path: 'inscricao',
+    component: SiteComponent,
   },
   {
     path: 'register/account',

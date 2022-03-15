@@ -4,9 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -29,7 +31,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCardModule } from "@angular/material/card";
 import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTabsModule } from '@angular/material/tabs';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -39,24 +43,13 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 
 import { SiteComponent } from './views/site/site.component';
 import { LoginComponent } from './views/login/login.component';
-import { ApiComponent } from './views/api/api.component';
 import { RegisterComponent } from './views/register/register.component';
 import { ResetComponent } from './views/reset/reset.component';
 import { LogoutComponent } from './views/logout/logout.component';
 
 import { AuthComponent } from './components/account/auth/auth.component';
-import { CreateAccountComponent } from './components/account/create-account/create-account.component';
-import { VerifyEmailComponent } from './components/account/verify-email/verify-email.component';
 import { RequestResetPasswordComponent } from './components/account/request-reset-password/request-reset-password.component';
 import { ResetPasswordComponent } from './components/account/reset-password/reset-password.component';
-import { ApiLayoutComponent } from './template/api-layout/api-layout.component';
-import { HeaderComponent } from './template/api-layout/header/header.component';
-import { FooterComponent } from './template/api-layout/footer/footer.component';
-import { NavComponent } from './template/api-layout/nav/nav.component';
-import { SidenavComponent } from './template/api-layout/sidenav/sidenav.component';
-import { HomeComponent } from './views/api/home/home.component';
-import { AgendaComponent } from './views/api/agenda/agenda.component';
-import { PlantaoComponent } from './views/api/plantao/plantao.component';
 import { NewPlantaoBtnComponent } from './components/plantao/new-plantao-btn/new-plantao-btn.component';
 import { NewPlantaoBoxComponent } from './components/plantao/new-plantao-box/new-plantao-box.component';
 import { ListPlantaoComponent } from './components/plantao/list-plantao/list-plantao.component';
@@ -64,13 +57,11 @@ import { InfoPlantaoBoxComponent } from './components/plantao/info-plantao-box/i
 import { EvalPlantaoBoxComponent } from './components/plantao/eval-plantao-box/eval-plantao-box.component';
 import { EditPlantaoBoxComponent } from './components/plantao/edit-plantao-box/edit-plantao-box.component';
 import { RemovePlantaoBoxComponent } from './components/plantao/remove-plantao-box/remove-plantao-box.component';
-import { PegaplantaoComponent } from './views/api/pegaplantao/pegaplantao.component';
 import { CalendarComponent } from './components/agenda/calendar/calendar.component';
-import { FinanceiroComponent } from './views/api/financeiro/financeiro.component';
 import { TodayBoxComponent } from './components/agenda/today-box/today-box.component';
 import { AttachPlantaoBoxComponent } from './components/plantao/attach-plantao-box/attach-plantao-box.component';
 import { AttachFileComponent } from './components/plantao/attach-file/attach-file.component';
-import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { ListAttachComponent } from './components/plantao/list-attach/list-attach.component';
 import { ListPlantaoFinanceiroComponent } from './components/financeiro/list-plantao-financeiro/list-plantao-financeiro.component';
 import { TaxesPlantaoBoxComponent } from './components/financeiro/taxes-plantao-box/taxes-plantao-box.component';
@@ -85,7 +76,28 @@ import { ItemLiquidoComponent } from './components/home/item-liquido/item-liquid
 import { ItemImpostoComponent } from './components/home/item-imposto/item-imposto.component';
 import { ItemFaturaComponent } from './components/home/item-fatura/item-fatura.component';
 import { ItemPlantaoComponent } from './components/home/item-plantao/item-plantao.component';
-import { AdminComponent } from './views/api/admin/admin.component';
+import { InscricaoBoxComponent } from './components/site/inscricao-box/inscricao-box.component';
+
+import { AppLayoutComponent } from './template/app-layout/app-layout.component';
+import { AppLayoutHeaderComponent } from './template/app-layout/app-layout-header/app-layout-header.component';
+import { AppLayoutNavComponent } from './template/app-layout/app-layout-nav/app-layout-nav.component';
+import { AppLayoutSidenavComponent } from './template/app-layout/app-layout-sidenav/app-layout-sidenav.component';
+import { HomeComponent } from './views/home/home.component';
+import { RegisterAccountComponent } from './components/account/register-account/register-account.component';
+import { ConfirmEmailComponent } from './components/account/confirm-email/confirm-email.component';
+import { ScheduleComponent } from './views/schedule/schedule.component';
+import { PlantaoComponent } from './views/plantao/plantao.component';
+import { FaturaComponent } from './views/fatura/fatura.component';
+import { PegaplantaoComponent } from './views/pegaplantao/pegaplantao.component';
+import { AdminComponent } from './views/admin/admin.component';
+import { AdminFaturaComponent } from './views/admin/admin-fatura/admin-fatura.component';
+import { AdminPlantaoComponent } from './views/admin/admin-plantao/admin-plantao.component';
+import { SettingsComponent } from './views/settings/settings.component';
+import { SettingsProfileComponent } from './views/settings/settings-profile/settings-profile.component';
+import { AdminInscricaoComponent } from './views/admin/admin-inscricao/admin-inscricao.component';
+import { DocComponent } from './views/doc/doc.component';
+
+// import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -93,22 +105,11 @@ import { AdminComponent } from './views/api/admin/admin.component';
     SiteComponent,
     LoginComponent,
     AuthComponent,
-    ApiComponent,
     RegisterComponent,
-    CreateAccountComponent,
-    VerifyEmailComponent,
     RequestResetPasswordComponent,
     ResetComponent,
     ResetPasswordComponent,
     LogoutComponent,
-    ApiLayoutComponent,
-    HeaderComponent,
-    FooterComponent,
-    NavComponent,
-    SidenavComponent,
-    HomeComponent,
-    AgendaComponent,
-    PlantaoComponent,
     NewPlantaoBtnComponent,
     NewPlantaoBoxComponent,
     ListPlantaoComponent,
@@ -116,9 +117,7 @@ import { AdminComponent } from './views/api/admin/admin.component';
     EvalPlantaoBoxComponent,
     EditPlantaoBoxComponent,
     RemovePlantaoBoxComponent,
-    PegaplantaoComponent,
     CalendarComponent,
-    FinanceiroComponent,
     TodayBoxComponent,
     AttachPlantaoBoxComponent,
     AttachFileComponent,
@@ -136,7 +135,26 @@ import { AdminComponent } from './views/api/admin/admin.component';
     ItemImpostoComponent,
     ItemFaturaComponent,
     ItemPlantaoComponent,
+    InscricaoBoxComponent,
+
+    AppLayoutComponent,
+    AppLayoutHeaderComponent,
+    AppLayoutNavComponent,
+    AppLayoutSidenavComponent,
+    HomeComponent,
+    RegisterAccountComponent,
+    ConfirmEmailComponent,
+    ScheduleComponent,
+    PlantaoComponent,
+    FaturaComponent,
+    PegaplantaoComponent,
     AdminComponent,
+    AdminFaturaComponent,
+    AdminPlantaoComponent,
+    SettingsComponent,
+    SettingsProfileComponent,
+    AdminInscricaoComponent,
+    DocComponent,
   ],
     imports: [
         BrowserModule,
@@ -169,10 +187,13 @@ import { AdminComponent } from './views/api/admin/admin.component';
         MatProgressBarModule,
         MatSelectModule,
         MatExpansionModule,
-        NgxChartsModule
+        NgxChartsModule,
+        FontAwesomeModule,
+        MatTabsModule
     ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: AccountInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: AccountInterceptor, multi: true},
+    // {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent],
   schemas: [

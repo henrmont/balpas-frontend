@@ -1,0 +1,42 @@
+.inscricao {
+    z-index: 1000;
+}
+
+.inscricao div {
+    display: flex;
+    justify-content: center;
+}
+
+.inscricao form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inscricao form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inscricao form div.cols2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+.inscricao form div.datetime {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 10px;
+}
+
+.inscricao form div button mat-icon {
+    vertical-align: -7px;
+}
+
+.inscricao form div .close {
+    background-color: rgb(240, 150, 150);
+}
+
+.inscricao form div .add {
+    background-color: rgb(150, 240, 150);
+}

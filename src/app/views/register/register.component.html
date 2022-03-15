@@ -1,5 +1,5 @@
 <section class="register">
     <div *ngIf="token then thenBlock else elseBlock"></div>
 </section>
-<ng-template #thenBlock><app-verify-email></app-verify-email></ng-template>
-<ng-template #elseBlock><app-create-account></app-create-account></ng-template>
+<ng-template #thenBlock><app-confirm-email></app-confirm-email></ng-template>
+<ng-template #elseBlock><app-register-account></app-register-account></ng-template>

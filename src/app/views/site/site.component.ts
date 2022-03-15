@@ -1,4 +1,9 @@
+import { MatDialog } from '@angular/material/dialog';
+import { SiteService } from './../../components/site/site.service';
 import { Component, OnInit } from '@angular/core';
+import { faFacebook, faInstagram, faWhatsapp} from '@fortawesome/free-brands-svg-icons';
+import { InscricaoBoxComponent } from 'src/app/components/site/inscricao-box/inscricao-box.component';
+
 
 @Component({
   selector: 'app-site',
@@ -7,9 +12,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiteComponent implements OnInit {
 
-  constructor() { }
+  faFacebook = faFacebook;
+  faInstagram = faInstagram;
+  faWhatsapp = faWhatsapp;
+
+  constructor(
+    private siteService: SiteService,
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  inscricao(): void {
+    const dialogRef = this.dialog.open(InscricaoBoxComponent, {
+      width: '35rem',
+    });
   }
 
 }

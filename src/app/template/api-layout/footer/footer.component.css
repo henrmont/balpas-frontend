@@ -1,9 +1,0 @@
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-mat-toolbar {
-    background-color: rgb(40, 43, 98);
-}

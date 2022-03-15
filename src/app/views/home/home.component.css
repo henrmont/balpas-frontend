@@ -1,0 +1,64 @@
+section.title {
+    margin: 1rem 0;
+}
+
+section.title span {
+    font-size: 20px;
+}
+
+section.title span mat-icon {
+    vertical-align: -5px;
+    margin-right: 1rem;
+}
+
+section.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 50px;
+}
+
+section.content div.chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+}
+
+section.content div.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section.content div.info .item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 100%;
+    height: auto;
+}
+
+section.content div.info .item mat-icon {
+    margin: 0;
+    font-size: 80px;
+}
+
+section.content div.info .item div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+section.content div.info .item div span:first-child {
+    padding: 1rem 0;
+}
+
+section.content div.info .item div span:first-child {
+    font-size: 22px;
+}
+
+section.content div.info .item div span:last-child {
+    font-size: 27px;
+    margin-bottom: 1rem;
+}

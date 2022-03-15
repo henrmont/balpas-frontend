@@ -1,0 +1,9 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+        <app-app-layout-sidenav (sidenavClose)="sidenav.close()"></app-app-layout-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-app-layout-header (sidenavToggle)="sidenav.toggle()"></app-app-layout-header>
+        <app-app-layout-nav></app-app-layout-nav>
+    </mat-sidenav-content>
+</mat-sidenav-container>

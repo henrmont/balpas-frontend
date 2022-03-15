@@ -1,3 +1,4 @@
+import { CommonService } from './../../common.service';
 import { Account } from './../account.model';
 import { AccountService } from './../account.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,6 +18,7 @@ export class AuthComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
+    private commonService: CommonService,
     private router: Router
   ) { }
 
@@ -30,15 +32,15 @@ export class AuthComponent implements OnInit {
           (user) => {
             if (user.valid) {
               window.localStorage.setItem('token', response.token)
-              this.router.navigate(['api'])
+              this.router.navigate(['inicio'])
             } else {
-              this.accountService.showMessage('Usuário inválido')      
+              this.commonService.showMessage('Usuário inválido')      
             }
           }
         )
       },
       (err) => {
-        this.accountService.showMessage('Credenciais inválida')
+        this.commonService.showMessage('Credenciais inválida')
       }
     )
   }

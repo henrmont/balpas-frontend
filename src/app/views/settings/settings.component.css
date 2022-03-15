@@ -1,0 +1,35 @@
+h2 {
+    font-size: 30px;
+    font-family: 'Mukta', sans-serif;
+    margin-top: 2rem;
+}
+
+section.admin {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    column-gap: 1rem;
+    margin-top: 1rem;
+}
+
+section.admin div.menu {
+    width: 100%;
+}
+
+section.admin div.menu  mat-list mat-list-item button{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Mukta', sans-serif;
+
+}
+
+section.admin div.menu  mat-list mat-list-item button mat-icon {
+    vertical-align: -5px;
+    margin-right: 1rem;
+}
+
+section.admin div.content {
+    width: auto;
+}

@@ -1,0 +1,65 @@
+div.block {
+    margin-top: 2rem;
+    border-bottom: 2px solid rgb(100,100,100);
+    padding-bottom: 2rem;
+}
+
+div.block:first-child {
+    margin-top: 0;
+}
+
+div.block span.title {
+    font-size: 25px;
+    font-family: 'Mukta', sans-serif;
+}
+
+div.block div.photo {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.block div.photo button {
+    width: 20%;
+}
+
+div.block div.photo img {
+    width: 150px;
+}
+
+div.block div.info {
+    width: 80%;
+    padding: 0 5%;
+    margin-top: 1rem;
+    column-gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+div.block div.info div {
+    padding-top: .5rem;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 17px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+div.btns {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+div.btns button {
+    background-color: rgb(150, 255, 150);
+    color: rgb(50,50,50);
+}
+
+div.btns button mat-icon {
+    vertical-align: -5px;
+    margin-right: 1rem;
+}
+

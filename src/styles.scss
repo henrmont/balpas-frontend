@@ -1,0 +1,85 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$balpas-rosa-palette: (
+    50 : #fce8ea,
+    100 : #f8c6cc,
+    200 : #f3a0aa,
+    300 : #ee7987,
+    400 : #eb5d6e,
+    500 : #e74054,
+    600 : #e43a4d,
+    700 : #e03243,
+    800 : #dd2a3a,
+    900 : #d71c29,
+    A100 : #ffffff,
+    A200 : #ffd9db,
+    A400 : #ffa6ab,
+    A700 : #ff8c93,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$balpas-roxo-palette: (
+    50 : #e5e6ec,
+    100 : #bfbfd0,
+    200 : #9495b1,
+    300 : #696b91,
+    400 : #484b7a,
+    500 : #282b62,
+    600 : #24265a,
+    700 : #1e2050,
+    800 : #181a46,
+    900 : #0f1034,
+    A100 : #7176ff,
+    A200 : #3e44ff,
+    A400 : #0b13ff,
+    A700 : #0008f1,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$light-primary: mat.define-palette($balpas-rosa-palette, 500);
+$light-accent: mat.define-palette($balpas-roxo-palette, 100);
+$warn: mat.define-palette(mat.$red-palette);
+$light-theme: mat.define-light-theme((
+    color: (
+        primary: $light-primary,
+        accent: $light-accent,
+        warn: $warn,
+    )
+));
+
+@include mat.all-component-themes($light-theme);
+
+
+
+

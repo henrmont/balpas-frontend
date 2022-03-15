@@ -1,0 +1,75 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+header mat-toolbar {
+    justify-content: space-between;
+}
+
+.vertical {
+    display: none;
+}
+
+@media screen and (min-width: 667px) and (max-width: 915px) {
+    .vertical {
+        display: flex;
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navigation-items {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navigation-items li{
+    height: 100%;
+    display: flex;
+    float: left;
+}
+
+.navigation-items li button.button {
+    width: 250px;
+    height: 100%;
+}
+
+.navigation-items li button.button img {
+    float: left;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navigation-items li button.button .user {
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navigation-items li button.button .user span {
+    line-height: 20px;
+}
+
+.navigation-items li button mat-icon {
+    vertical-align: -6px;
+    margin-right: .5rem;
+}
+
+img {
+    height: 60px;
+    vertical-align: middle;
+}
+
+.admin, .admin mat-icon{ 
+    color: red;
+}

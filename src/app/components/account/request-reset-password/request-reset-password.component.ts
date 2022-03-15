@@ -1,3 +1,4 @@
+import { CommonService } from './../../common.service';
 import { AccountService } from './../account.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -16,7 +17,8 @@ export class RequestResetPasswordComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private commonService: CommonService
   ) { }
 
   ngOnInit(): void {
@@ -24,7 +26,7 @@ export class RequestResetPasswordComponent implements OnInit {
 
   onSubmit(): void {
     this.accountService.requestResetPassword(this.user).subscribe((response) => {
-      this.accountService.showMessage(response.message)
+      this.commonService.showMessage(response.message)
       if (response.status == 1) {
         this.router.navigate(['login'])
       } 

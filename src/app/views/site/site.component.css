@@ -1,3 +1,4 @@
+/* ************** HEADER ****************** */
 header {
   position: fixed;
   width: 100%;
@@ -21,7 +22,7 @@ header mat-toolbar a.img img {
 header mat-toolbar ul li {
   display: inline;
   padding: 0 1rem;
-  font-family: 'Gontserrat Bold';
+  font-family: 'Gontserrat';
   font-size: 1rem;
 }
 
@@ -38,45 +39,127 @@ header mat-toolbar ul li a:hover {
   border-bottom: 1px solid black;
 }
 
-.start {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-  height: 100vh;
-  background-image: url('../../../assets/img/start-bg.png');
-  background-size: cover;
+#btnwpp {
+  position: fixed;
+  bottom: 10px;
+  right: 10px; 
+  z-index: 5;
 }
 
-.start div.center {
+/* ********* RESPONSIVE HEADER ************* */
+@media screen and (max-width: 915px) {
+  header {
+    display: none;
+  }
+}
+
+/* ********** BOAS VINDAS ***************** */
+.boas-vindas {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../../../assets/img/boas-vindas.png');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.boas-vindas div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rem;
+  width: 30rem;
+  height: auto;
+}
+
+.boas-vindas div span {
+  line-height: 4rem;
+  font-family: 'Gontserrat Bold';
+  font-size: 3rem;
+  color: rgb(231, 64, 84);
+}
+
+/* *********** RESPONSIVE BOAS VINDAS (SMARTPHONE) *********** */
+@media screen and (min-width: 360px) and (max-width: 414px) {
+  .boas-vindas {
+    background-image: url('../../../assets/img/boas-vindas-mobile.png');
+    background-size: contain;
+  }
+
+  .boas-vindas div {
+    padding: 1rem;
+    margin-left: 0;
+    width: auto;
+    text-align: center;
+    align-items: center;
+  }
+
+  .boas-vindas div span {
+    width: 80%;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 667px) and (max-width: 915px) {
+  .boas-vindas div {
+    padding: 1rem;
+    margin-left: 0;
+    margin-right: 50%;
+    width: auto;
+    text-align: center;
+  }
+
+  .boas-vindas div span {
+    font-size: 2rem;
+  }
+}
+
+/* ************ INSCREVA-SE *************** */
+.inscreva-se {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  width: 30rem;
-  height: 20rem;
-  background-color: rgba(220,220,220,0.8);
-  /* border: 3px solid rgb(140,140,140); */
-  border-radius: 3rem;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../../../assets/img/inscreva-se.png');
+  background-size: cover;
 }
 
-.start div.center button {
+.inscreva-se div.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50%;
+  width: 30rem;
+  height: 20rem;
+  background-color: rgb(231, 64, 84);
+  border-radius: 2rem;
+  color: white;
+}
+
+.inscreva-se div.center button {
   margin: 0 1rem;
   padding: 1.5rem;
   border: none;
-  background-color: rgb(200,150,10);
+  background-color: rgb(40, 43, 98);
   font-family: 'Gontserrat Bold';
   font-size: 1.5rem;
   font-weight: 300;
   border-radius: 1rem;
   transition: .4s all;
+  text-decoration: none;
+  color: white;
 }
 
-.start div.center button:hover {
-  background-color: rgb(240,180,10);
+.inscreva-se div.center button:hover {
+  background-color: rgb(80, 83, 138);
 }
 
-.start div.center h1 {
+.inscreva-se div.center h1 {
   margin: 0 1rem;
   font-family: 'Gontserrat';
   font-size: 1.7rem;
@@ -85,110 +168,260 @@ header mat-toolbar ul li a:hover {
   margin-bottom: 2rem;
 }
 
-.presents {
-  width: 100%;
-  height: auto;
-  padding-top: 10vh;
-  font-family: 'Gontserrat';
+/* *********** RESPONSIVE INSCREVA-SE (SMARTPHONE) *********** */
+@media screen and (min-width: 360px) and (max-width: 414px) {
+  .inscreva-se {
+    background-image: url('../../../assets/img/inscreva-se-mobile.png');
+    background-size: cover;
+  }
+  
+  .inscreva-se div.center {
+    margin: 3rem;
+    padding: 1rem;
+    width: auto;
+    height: auto;
+  }
+
+  .inscreva-se div.center h1 {
+    font-size: 1.4rem;
+  }
+
+  .inscreva-se div.center button {
+    font-size: 1.3rem;
+  }
 }
 
-.presents div.title, .services div.title, .prices div.title, .footer div.title  {
+@media screen and (min-width: 667px) and (max-width: 915px) {
+  .inscreva-se div.center {
+    margin: 1rem;
+    margin-left: 60%;
+    padding: 1rem;
+    width: auto;
+    height: 60%;
+  }
+  
+  .inscreva-se div.center button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .inscreva-se div.center h1 {
+    font-size: 1rem;
+  }
+}
+
+/* ************ SOBRE *************** */
+.sobre {
   width: 100%;
+  height: 90vh;
+  padding-top: 10vh;
+  font-family: 'Gontserrat';
+  background-image: url('../../../assets/img/sobre.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.sobre div.title  {
+  margin-left: 50%;
+  width: 50%;
   height: 15vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.presents div.title h1, .services div.title h1, .prices div.title h1, .footer div.title h1 {
-  margin-top: 2rem;
-  font-family: 'Gontserrat Bold';
-  font-size: 3rem;
-}
-
-.presents div.title div {
-  width: 20%;
-  height: 2px;
-  background-image: linear-gradient(to right, white, black, white);
-}
-
-.presents div.content {
-  width: 100%;
-  height: 75vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.presents div.content div.img {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.presents div.content div img {
-  height: 25rem;
-  transform: rotate(-10deg);
+.sobre div.title h1, .planos div.title h1, .footer div.title h1 {
+  /* margin-top: 5rem; */
+  font-family: 'Gontserrat Bold';
+  font-size: 3rem;
 }
 
-.presents div.content div img.mapa {
-  height: 35rem;
-  transform: rotate(0deg);
+.sobre div.title div {
+  width: 27%;
+  height: 2px;
+  background-image: linear-gradient(to right, rgb(240,240,240), black, white);
 }
 
-.presents div.content div p {
+.sobre div.content {
+  width: 50%;
+  height: 75vh;
+  margin-left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sobre div.content div.text p {
   padding: 0 3rem;
   text-align: justify;
   text-indent: 3rem;
-  font-size: 1rem;
-  line-height: 2rem;
+  font-size: .9rem;
+  line-height: 1.8rem;
 }
 
-.services {
+/* *********** RESPONSIVE SOBRE (SMARTPHONE) *********** */
+@media screen and (min-width: 360px) and (max-width: 414px) {
+  .sobre {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 0;
+    background-image: url('../../../assets/img/sobre-mobile.png');
+  }
+
+  .sobre div.title  {
+    height: 15vh;
+    margin: auto;
+    width: 100%;
+  }
+
+  .sobre div.title h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .sobre div.title div {
+    width: 60%;
+    background-image: linear-gradient(to right, rgb(240,240,240), black, white);
+  }
+
+  .sobre div.content {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+
+  .sobre div.content div.text p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 667px) and (max-width: 915px) {
+  .sobre {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 0;
+    background-image: linear-gradient(to right bottom, rgb(150,150,150), rgb(230,230,230));
+  }
+
+  .sobre div.title  {
+    height: 20vh;
+    margin: auto;
+    width: 100%;
+  }
+
+  .sobre div.title h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .sobre div.title div {
+    width: 25%;
+    background-image: linear-gradient(to right, rgb(240,240,240), black, white);
+  }
+
+  .sobre div.content {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+
+  .sobre div.content div.text p {
+    font-size: .85rem;
+    line-height: 1.5rem;
+  }
+}
+
+/* ********** SERVIÇOS ************ */
+.servicos {
   width: 100%;
   height: auto;
-  padding: 15vh 0;
+  padding-bottom: 10vh;
   background-image: url('../../../assets/img/bluebg.png');
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: 'Gontserrat';
-}
-
-.services div.content {
-  width: 100%;
-  height: 75vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  justify-items: center;
+}
+
+.servicos div.numeros {
+  width: 100%;
+  height: 90vh;
+  padding-top: 10vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   color: white;
 }
 
-.services div.content div img {
-  height: 35rem;
+.servicos div.numeros div {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.services div.content div p {
-  padding: 0 3rem;
+.servicos div.numeros div img {
+  width: auto;
+  height: 100%;
+}
+
+.servicos div.numeros div h2 {
+  text-align: justify;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.servicos div.numeros div p {
+  width: 90%;
   text-align: justify;
   text-indent: 3rem;
   font-size: 1rem;
-  line-height: 2rem;
+  line-height: 1.5rem;
 }
 
-.services div.title h1 {
-  margin-top: 2rem;
+.servicos div.numeros div ul.locais {
+  width: 80%;
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.servicos div.title  {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.servicos div.title h1 {
+  /* margin-top: 2rem; */
   font-family: 'Gontserrat Bold';
   font-size: 3rem;
   color: white;
 }
 
-.services div.title div {
-  width: 27%;
+.servicos div.title div {
+  width: 32%;
   height: 2px;
   background-image: linear-gradient(to right, rgb(10,10,50), white, rgb(10,10,80));
 }
 
-.services mat-icon {
+.servicos mat-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -197,43 +430,46 @@ header mat-toolbar ul li a:hover {
   font-size: 2.5rem;
 }
 
-.services h2 {
+.servicos h2 {
   width: 80%;
   text-align: center;
   font-family: 'Gontserrat Bold';
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
-.services ul {
+.servicos ul.serv {
   width: 80%;
 }
 
-.services ul li {
+.servicos ul.serv li {
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
-.services div.content3 {
+.servicos div.content3 {
+  margin-top: 3rem;
   width: 100%;
   height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.services div.content2 {
+.servicos div.content2 {
   margin-top: 3rem;
-  width: 100%;
+  width: 67%;
   height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.services div.content3 div, .services div.content2 div {
+.servicos div.content3 div, .servicos div.content2 div {
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.services div.content3 div div:first-child, .services div.content2 div div:first-child {
+.servicos div.content3 div div:first-child, .servicos div.content2 div div:first-child {
   width: 4rem;
   height: 4rem;
   display: flex;
@@ -244,9 +480,9 @@ header mat-toolbar ul li a:hover {
   box-shadow: 0 0 10px white;
 }
 
-.services div.content3 div div:last-child, .services div.content2 div div:last-child {
+.servicos div.content3 div div:last-child, .servicos div.content2 div div:last-child {
   width: 20rem;
-  height: 19rem;
+  height: 22rem;
   margin-top: -2rem;
   padding-top: 3rem;
   background-color: white;
@@ -256,48 +492,180 @@ header mat-toolbar ul li a:hover {
   box-shadow: 0 0 10px white;
 }
 
-/* .services div.content3 div div:last-child:hover, .services div.content2 div div:last-child:hover {
-  background-color: rgb(200,200,200);
-} */
+/* *********** RESPONSIVE SERVICOS (SMARTPHONE) *********** */
+@media screen and (min-width: 360px) and (max-width: 414px) {
+  .servicos div.numeros {
+    height: auto;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+  }
 
-.services div.content2 {
-  width: 100%;
-  height: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  .servicos div.numeros div {
+    height: auto;
+  }
+
+  .servicos div.numeros div.img {
+    height: auto;
+  }
+
+  .servicos div.numeros div img {
+    width: 100%;
+    height: auto;
+  }
+
+  .servicos div.title h1 {
+    font-size: 2rem;
+  }
+  
+  .servicos div.title div {
+    width: 80%;
+    height: 2px;
+    background-image: linear-gradient(to right, rgb(10,10,50), white, rgb(10,10,80));
+  }
+
+  .servicos div.content3 {
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .servicos div.content2 {
+    margin-top: 0;
+    width: 67%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .servicos div.content3 div, .servicos div.content2 div {
+    margin-top: 1rem;
+  }
 }
 
-.prices {
+@media screen and (min-width: 667px) and (max-width: 915px) {
+  .servicos div.numeros {
+    height: auto;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .servicos div.numeros div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+  }
+
+  .servicos div.numeros div div {
+    display: flex;
+    height: auto;
+  }
+
+  .servicos div.numeros div.img {
+    display: flex;
+    height: auto;
+  }
+
+  .servicos div.numeros div img {
+    width: 100%;
+    height: auto;
+  }
+
+  .servicos div.title div {
+    width: 60%;
+    height: 2px;
+    background-image: linear-gradient(to right, rgb(10,10,50), white, rgb(10,10,80));
+  }
+
+  .servicos div.content3 {
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .servicos div.content2 {
+    margin-top: 0;
+    width: 67%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .servicos div.content3 div, .servicos div.content2 div {
+    display: flex;
+    justify-self: center;
+    margin-top: 1rem;
+  }
+
+  .servicos div.content3 div, .servicos div.content2 div {
+    width: 70vw;
+  }
+
+  .servicos div.content3 div div:last-child, .servicos div.content2 div div:last-child {
+    width: 100%;
+    height: 80vh;
+  }
+}
+
+/* ************ PLANOS **************** */
+.planos {
   width: 100%;
-  height: 90vh;
-  padding-top: 10vh;
+  height: 88vh;
+  padding-top: 12vh;
   font-family: 'Gontserrat';
+  background-image: url('../../../assets/img/planos.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.prices div.title div {
+.planos div.title {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.planos div.title div {
   width: 20%;
   height: 2px;
-  background-image: linear-gradient(to right, white, black, white);
+  background-image: linear-gradient(to right, rgb(200,230,255), black, rgb(200,230,255));
 }
 
-.prices div.title {
-  width: 100%;
-  height: 15vh;
-  display: flex;
-  margin: auto;
-}
-
-.prices div.content {
-  width: 100%;
-  height: 75vh;
+.planos div.content {
+  width: 90%;
+  height: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto;
+  align-items: flex-end;
   justify-items: center;
+  justify-content: center;
 }
 
-.prices div.content div {
-  width: 25rem;
-  height: 30rem;
+.planos div.content div {
+  width: 90%;
+  height: 95%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -306,39 +674,56 @@ header mat-toolbar ul li a:hover {
   border: 3px solid rgb(150,150,150);
   text-align: center;
   padding: 1rem 0;
-  background-color: rgb(240,240,240);
+  background-color: white;
 }
 
-.prices div.content div p {
+.planos div.content div span.residente {
+  font-size: 25px;
+  margin-bottom: 1rem;
+}
+
+.planos div.content div.menor {
+  margin-top: 5rem;
+}
+
+.planos div.content div h1 {
+  font-size: 2.5rem;
+  font-family: 'Gontserrat Bold';
+  color: rgb(40, 43, 98)
+}
+
+.planos div.content div p {
   font-size: 2rem;
   color: red;
 }
 
-.prices div.content div p span {
+.planos div.content div span {
   font-size: 1rem;
-  color: gray;
+  color: black;
+  line-height: 1rem;
 }
 
-.prices div.content div p span.overline {
+.planos div.content div span.overline {
   text-decoration: overline;
   color: gray;
 }
 
-.prices div.content div div {
+.planos div.content div div {
   border: none;
+  background: none;
 }
 
-.prices div.content div img {
+.planos div.content div img {
   margin-top: -1rem;
   width: 60%;
 }
 
-.prices div.content div a {
+.planos div.content div a {
   display: flex;
   border-radius: 1rem;
   padding: 1.5rem;
   text-decoration: none;
-  background-color: rgb(220,150,150);
+  background-color: rgb(100,200,250);
   font-family: 'Gontserrat Bold';
   font-size: 1.2rem;
   font-weight: 300;
@@ -346,96 +731,447 @@ header mat-toolbar ul li a:hover {
   transition: .4s all;
 }
 
-.prices div.content div a:hover {
+.planos div.content div a:hover {
   background-color: rgb(40, 43, 98);
   color: white;
 }
 
-.prices div.content div span {
+.planos div.content div span {
   font-family: 'Gontserrat';
   font-size: 0.9rem;
   padding: 0.5rem 0;
 }
 
-.prices div.content div span.overline {
+.planos div.content div span.overline {
   text-decoration: line-through;
   color: gray;
 }
 
+/* *********** RESPONSIVE PLANOS (SMARTPHONE) *********** */
+@media screen and (min-width: 360px) and (max-width: 414px) {
+  .planos {
+    width: 100%;
+    padding: 5vh 0;
+    height: auto;
+    font-family: 'Gontserrat';
+    background-image: url('../../../assets/img/planos.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .planos div.title {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .planos div.title div {
+    width: 50%;
+    height: 2px;
+    background-image: linear-gradient(to right, rgb(200,230,255), black, rgb(200,230,255));
+  }
+  
+  .planos div.content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .planos div.content div {
+    width: 80%;
+    margin-top: 1rem;
+  }
+  
+  .planos div.content div.menor {
+    margin-top: 1rem;
+  }
+
+  .planos div.content div h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 667px) and (max-width: 915px) {
+  .planos {
+    width: 100%;
+    padding: 5vh 0;
+    height: auto;
+    font-family: 'Gontserrat';
+    background-image: url('../../../assets/img/planos.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .planos div.title {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .planos div.title div {
+    width: 20%;
+    height: 2px;
+    background-image: linear-gradient(to right, rgb(200,230,255), black, rgb(200,230,255));
+  }
+  
+  .planos div.content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .planos div.content div {
+    width: 70%;
+    margin-top: 1rem;
+  }
+  
+  .planos div.content div.menor {
+    margin-top: 1rem;
+  }
+}
+
+/* ************* PARCEIROS *************** */
 .footer {
   width: 100%;
-  height: 85vh;
-  padding-top: 10vh;
+  height: 88vh;
+  padding-top: 12vh;
+  background-image: url('../../../assets/img/bluebg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .footer div.title {
   width: 100%;
   height: 15vh;
   display: flex;
-  margin: auto;
-}
-
-.footer div.title div {
-  width: 15%;
-  height: 2px;
-  background-image: linear-gradient(to right, white, black, white);
-}
-
-.footer div.content {
-  width: 100%;
-  height: 75vh;
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.footer div.content .partner {
-  width: 100%;
-  height: 20vh;
-  display: grid;
-  justify-items: center;
-  justify-content: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
-
-.footer div.content .subscribe {
-  width: 100%;
-  height: 55vh;
-  background-image: url('../../../assets/img/subsback.png');
-  background-size: cover;
-  background-position: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.footer div.content .subscribe button {
-  margin: 0 15rem;
-  padding: 1.5rem;
-  border: none;
-  background-color: rgb(200,150,10);
+.footer div.title h1 {
   font-family: 'Gontserrat Bold';
-  font-size: 1.2rem;
-  font-weight: 300;
-  border-radius: 1rem;
-  transition: .4s all;
+  font-size: 3rem;
+  color: white;
+}
+
+.footer div.title div {
+  width: 20%;
+  height: 2px;
+  background-image: linear-gradient(to right, rgb(10,10,50), white, rgb(10,10,80));
+}
+
+.footer div.content {
+  width: 100%;
+  height: 73vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.footer div.content .partner {
+  width: 100%;
+  height: 28vh;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.footer div.content .partner img {
+  width: 50%;
+}
+
+.footer div.content .subscribe {
+  width: 100%;
+  height: 45vh;
+  background-image: url('../../../assets/img/subsback.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer div.content .subscribe div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer div.content .subscribe h1 {
-  margin: 0 10rem;
+  width: 100%;
   font-family: 'Gontserrat';
   font-size: 1.5rem;
   text-align: center;
   line-height: 3rem;
   margin-bottom: 2rem;
+  color: white;
+}
+
+.footer div.content .subscribe button {
+  padding: 1.5rem;
+  border: none;
+  background-color: rgb(40, 43, 98);
+  font-family: 'Gontserrat Bold';
+  font-size: 1.2rem;
+  font-weight: 300;
+  border-radius: 1rem;
+  transition: .4s all;
+  color: white;
 }
 
 .footer div.content .subscribe button:hover {
-  background-color: rgb(240,180,10);
+  background-color: rgb(80, 83, 138);
 }
 
+/* *********** RESPONSIVE PARCEIROS (SMARTPHONE) *********** */
+@media screen and (min-width: 360px) and (max-width: 414px) {
+  .footer {
+    height: auto;
+    padding-top: 5vh;
+  }
+  
+  .footer div.title div {
+    width: 60%;
+  }
+
+  .footer div.content {
+    height: auto;
+  }
+
+  .footer div.content .partner {
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .footer div.content .partner img {
+    padding: 1rem 0;
+    width: 50%;
+  }
+
+  .footer div.content .subscribe {
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .footer div.content .subscribe div {
+    padding: 2rem 0;
+  }
+
+  .footer div.content .subscribe h1 {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 667px) and (max-width: 915px) {
+  .footer {
+    height: auto;
+    padding-top: 5vh;
+  }
+  
+  .footer div.title div {
+    width: 30%;
+  }
+
+  .footer div.content {
+    height: auto;
+  }
+
+  .footer div.content .partner {
+    height: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .footer div.content .partner img {
+    padding: 1rem 0;
+    width: 40%;
+  }
+
+  .footer div.content .subscribe {
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .footer div.content .subscribe h1 {
+    width: 80%;
+  }
+}
+
+/* *********** FOOTER **************** */
 footer {
   width: 100%;
-  height: 50vh;
-  background-color: green;
+  height: auto;
+  background-color: rgb(40, 43, 98);
+}
+
+footer div.map {
+  padding-top: 5vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+footer div.map div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Gontserrat';
+  border-right: 1px solid rgb(155, 155, 223);
+}
+
+footer div.map div:last-child {
+  margin-left: 3rem;
+  border-right: none;
+  color: rgb(230,230,230);
+  align-items: flex-start;
+}
+
+footer div.map div:last-child span {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+footer div.map div:last-child span mat-icon {
+  margin: 0 .5rem;
+  vertical-align: -5px;
+}
+
+footer div.map div:last-child img {
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+footer div.map div:last-child div.social {
+  margin-top: 2rem;
+  font-size: 2rem;
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+footer div.map div:last-child div.social a {
+  color: rgb(150,150,150);
+  transition: .4s;
+}
+
+footer div.map div:last-child div.social a:hover {
+  color: rgb(230,230,230);
+}
+
+footer div.map div h2 {
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+footer div.map div ul {
+  width: 50%;
+  list-style: none;
+}
+
+footer div.map div ul li {
+  line-height: 2rem;
+}
+
+footer div.map div ul li a {
+  color: rgb(150,150,150);
+  text-decoration: none;
+  transition: .4s;
+}
+
+footer div.map div ul li a:hover {
+  color: rgb(230,230,230);
+}
+
+footer div.copyright {
+  margin-top: 5vh;
+  background-color: rgb(20, 23, 78);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(200,200,200);
+}
+
+/* *********** RESPONSIVE FOOTER (SMARTPHONE) *********** */
+@media screen and (min-width: 360px) and (max-width: 414px) {
+  footer div.map {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer div.map div {
+    border-right: none;
+  }
+
+  footer div.map div:last-child {
+    margin: 2rem auto auto;
+  }
+
+  footer div.map div h2 {
+    margin-top: 2rem;
+  }
+
+  footer div.map div ul {
+    width: 90%;
+    list-style: none;
+  }
+}
+
+@media screen and (min-width: 667px) and (max-width: 915px) {
+  footer div.map {
+    padding-top: 5vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+  }
+
+  footer div.map div {
+    width: 100%;
+    border-right: none;
+  }
+
+  footer div.map div:first-child {
+    border-right: 1px solid rgb(155, 155, 223);
+  }
+
+  footer div.map div:last-child {
+    width: 200%;
+    display: flex;
+    align-items: center;
+    margin: 2rem auto auto;
+  }
+
+  footer div.map div h2 {
+    margin-top: 2rem;
+  }
+
+  footer div.map div ul {
+    width: 90%;
+    list-style: none;
+  }
 }
