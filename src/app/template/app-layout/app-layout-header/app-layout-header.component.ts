@@ -26,7 +26,6 @@ export class AppLayoutHeaderComponent implements OnInit {
     this.accountService.getUserInfo().subscribe(
       (response) => {
         this.roles = response.roles
-        console.log(this.roles)
       },
       (err) => {
         this.commonService.showMessage('A sessão expirou')

@@ -102,7 +102,23 @@ header mat-toolbar ul li a:hover {
   }
 }
 
+/* *********** RESPONSIVE BOAS VINDAS (SMARTPHONE) *********** */
 @media screen and (min-width: 667px) and (max-width: 915px) {
+  .boas-vindas div {
+    padding: 1rem;
+    margin-left: 0;
+    margin-right: 50%;
+    width: auto;
+    text-align: center;
+  }
+
+  .boas-vindas div span {
+    font-size: 2rem;
+  }
+}
+
+/* *********** RESPONSIVE BOAS VINDAS (SMARTPHONE) *********** */
+@media screen and (min-width: 915px) and (max-width: 1024px) {
   .boas-vindas div {
     padding: 1rem;
     margin-left: 0;
@@ -126,6 +142,7 @@ header mat-toolbar ul li a:hover {
   height: 100vh;
   background-image: url('../../../assets/img/inscreva-se.png');
   background-size: cover;
+  background-position: center left;
 }
 
 .inscreva-se div.center {
@@ -210,6 +227,25 @@ header mat-toolbar ul li a:hover {
   }
 }
 
+@media screen and (min-width: 915px) and (max-width: 1024px) {
+  .inscreva-se div.center {
+    margin: 1rem;
+    margin-left: 60%;
+    padding: 1rem;
+    width: auto;
+    height: 30%;
+  }
+  
+  .inscreva-se div.center button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .inscreva-se div.center h1 {
+    font-size: 1rem;
+  }
+}
+
 /* ************ SOBRE *************** */
 .sobre {
   width: 100%;
@@ -219,6 +255,7 @@ header mat-toolbar ul li a:hover {
   background-image: url('../../../assets/img/sobre.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -340,6 +377,12 @@ header mat-toolbar ul li a:hover {
   }
 }
 
+@media screen and (min-width: 915px) and (max-width: 1028px) {
+  .sobre div.content div.text p {
+    font-size: .8rem;
+  }
+}
+
 /* ********** SERVIÇOS ************ */
 .servicos {
   width: 100%;
@@ -365,16 +408,16 @@ header mat-toolbar ul li a:hover {
 }
 
 .servicos div.numeros div {
-  height: 90vh;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .servicos div.numeros div img {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  /* height: auto; */
 }
 
 .servicos div.numeros div h2 {
@@ -632,7 +675,7 @@ header mat-toolbar ul li a:hover {
   height: 88vh;
   padding-top: 12vh;
   font-family: 'Gontserrat';
-  background-image: url('../../../assets/img/planos.png');
+  /* background-image: url('../../../assets/img/planos.png'); */
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -654,97 +697,72 @@ header mat-toolbar ul li a:hover {
 
 .planos div.content {
   width: 90%;
-  height: auto;
+  height: 80vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: auto;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-items: center;
   justify-content: center;
 }
 
-.planos div.content div {
+.planos div.content div.item {
+  background-color: rgb(240,240,240);
   width: 90%;
-  height: 95%;
+  height: 430px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  border-radius: 50px;
-  border: 3px solid rgb(150,150,150);
-  text-align: center;
   padding: 1rem 0;
-  background-color: white;
+}
+
+.planos div.content div.top, .planos div.content div.mid, .planos div.content div.bot {
+  padding: 1rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.planos div.content div.bot {
+  justify-items: flex-end;
+}
+
+.planos div.content h1 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.planos div.content img {
+  height: 60px;
 }
 
 .planos div.content div span.residente {
-  font-size: 25px;
-  margin-bottom: 1rem;
+  font-size: 30px;
 }
 
-.planos div.content div.menor {
-  margin-top: 5rem;
-}
-
-.planos div.content div h1 {
-  font-size: 2.5rem;
-  font-family: 'Gontserrat Bold';
-  color: rgb(40, 43, 98)
-}
-
-.planos div.content div p {
-  font-size: 2rem;
+.planos div.content div.item p {
   color: red;
+  font-size: 30px;
 }
 
-.planos div.content div span {
-  font-size: 1rem;
-  color: black;
-  line-height: 1rem;
-}
-
-.planos div.content div span.overline {
-  text-decoration: overline;
+.planos div.content div.item p span {
   color: gray;
+  font-size: 15px;
 }
 
-.planos div.content div div {
-  border: none;
-  background: none;
-}
-
-.planos div.content div img {
-  margin-top: -1rem;
-  width: 60%;
-}
-
-.planos div.content div a {
+.planos div.content div.itens {
+  height: 200px;
+  padding: 2rem 0;
   display: flex;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  text-decoration: none;
-  background-color: rgb(100,200,250);
-  font-family: 'Gontserrat Bold';
-  font-size: 1.2rem;
-  font-weight: 300;
-  color: black;
-  transition: .4s all;
+  justify-content: flex-start;
+  text-align: center;
 }
 
-.planos div.content div a:hover {
-  background-color: rgb(40, 43, 98);
-  color: white;
-}
-
-.planos div.content div span {
-  font-family: 'Gontserrat';
-  font-size: 0.9rem;
-  padding: 0.5rem 0;
-}
-
-.planos div.content div span.overline {
-  text-decoration: line-through;
-  color: gray;
+.planos div.content button {
+  font-size: 17px;
 }
 
 /* *********** RESPONSIVE PLANOS (SMARTPHONE) *********** */
