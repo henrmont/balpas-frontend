@@ -1,0 +1,37 @@
+<section class="title">
+    <span><mat-icon>mode_edit_outline</mat-icon>Editar valor</span>
+    <button mat-mini-fab color="warn" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+</section>
+
+<section class="content">
+    <form #form="ngForm">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput [(ngModel)]="taxe.name" name="name" required>
+        </mat-form-field>
+        <div class="cols2">
+            <mat-form-field class="example-full-width" appearance="outline" required>
+                <mat-label>Tipo de taxa</mat-label>
+                <mat-select [(ngModel)]="taxe.type" name="type">
+                    <mat-option *ngFor="let item of type" [value]="item.value">
+                        {{item.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Valor</mat-label>
+                <input matInput [(ngModel)]="taxe.value" name="value" required mask="separator.2" separatorLimit="10000" [allowNegativeNumbers]="false">
+            </mat-form-field>
+        </div>
+        <div class="buttons">
+            <button mat-raised-button type="submit" class="add" [disabled]="form.form.invalid" (click)="onSubmit()">
+                <mat-icon>edit</mat-icon>
+                Editar valor
+            </button>
+        </div>
+    </form>
+</section>
+
+

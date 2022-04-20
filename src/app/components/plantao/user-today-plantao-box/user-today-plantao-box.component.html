@@ -1,0 +1,82 @@
+<section class="title">
+  <span><mat-icon>today</mat-icon>Agenda de {{data.date | date:'dd/LL/YYYY' }}</span>
+  <button mat-mini-fab color="warn" (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+</section>
+
+<section class="content">
+
+  <div style="display: flex; justify-content: center;">
+    <h1 *ngIf="plantoes.length == 0">Sem plantões disponíveis</h1>
+  </div>
+
+  <mat-card *ngFor="let item of plantoes" class="mat-elevation-z4">
+    <div class="item">
+      <span class="title">Local de atendimento</span>
+      <span><strong>{{item.local}}</strong></span>
+    </div>
+    <div class="cols2">
+      <div class="item">
+        <span class="title">Inicio:</span>
+        <span><strong>{{item.startAt | date:'HH:mm' }}</strong></span>
+      </div>
+      <div class="item">
+        <span class="title">Duração:</span>
+        <span><strong>{{item.duration}}h</strong></span>
+      </div>
+    </div>
+    <div class="datetime">
+      <div class="item">
+        <span class="title">Empresa:</span>
+        <span><strong>{{item.company}}</strong></span>
+      </div>
+      <div class="item">
+        <span class="title">Valor:</span>
+        <span><strong>{{item.value| currency:'BRL':true:'1.2-2' }}</strong></span>
+      </div>
+    </div>
+  </mat-card>
+
+</section>
+
+
+<!-- <div class="today">
+    <div>
+      <h2></h2>
+    </div>
+    <div class="content">
+      <mat-card *ngFor="let plantao of plantoes" class="mat-elevation-z4">
+        <div class="title">
+          <h2>{{plantao.title}}</h2>
+        </div>
+        <div class="time">
+          <div>
+            <h3>Início</h3>
+            <span>{{plantao.date| date:'HH:mm'}}</span>
+          </div>
+          <div>
+            <h3>Duração</h3>
+            <span>{{plantao.duration}}h</span>
+          </div>
+        </div>
+        <div class="company">
+          <div>
+            <h3>Empresa</h3>
+            <span>{{plantao.company}}</span>
+          </div>
+          <div>
+            <h3>Valor</h3>
+            <span>R$ {{plantao.value|number: '1.2-2'}}</span>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div>
+      <button mat-raised-button type="button" (click)="close()" class="close">
+        <mat-icon>close</mat-icon>
+        Fechar
+      </button>
+    </div>
+  
+  </div> -->

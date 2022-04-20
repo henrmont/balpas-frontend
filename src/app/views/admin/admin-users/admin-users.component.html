@@ -1,0 +1,45 @@
+<section class="resource">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Buscar</mat-label>
+        <input matInput>
+    </mat-form-field>
+</section>
+<section class="content">
+<mat-accordion>
+    
+    <mat-expansion-panel *ngFor="let item of users">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{item.email}}
+        </mat-panel-title>
+        <mat-panel-description>
+          <span *ngIf="item.isActive" style="color: green;"><mat-icon>check</mat-icon></span>
+          <span *ngIf="!item.isActive" style="color: red;"><mat-icon>close</mat-icon></span>
+
+          <span *ngIf="item.isResident" style="margin-left: 1rem;"><mat-icon>medical_information</mat-icon>Residente</span>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      
+      <div class="info">
+        <button mat-flat-button color="accent" (click)="editUser(item.id)">
+            Editar
+        </button>
+        <button mat-flat-button color="accent" (click)="rolesUser(item.id)">
+            Administrador
+        </button>
+        <button mat-flat-button color="accent" (click)="typeUser(item.id)">
+            Tipo
+        </button>
+        <button *ngIf="!item.isActive" mat-flat-button color="warn" (click)="validateUser(item.id)">
+            Validar
+        </button>
+        <button *ngIf="item.isActive" mat-flat-button color="warn" (click)="validateUser(item.id)">
+            Invalidar
+        </button>
+      </div>
+    </mat-expansion-panel>
+
+</mat-accordion>
+
+</section>
+

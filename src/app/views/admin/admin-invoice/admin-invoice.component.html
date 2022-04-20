@@ -1,0 +1,44 @@
+<section class="resource">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Buscar</mat-label>
+        <input matInput>
+    </mat-form-field>
+<div>
+    <button mat-flat-button color="accent" (click)="newInvoice()">
+        <mat-icon>add</mat-icon>
+        Nova fatura
+    </button>
+</div>
+</section>
+<section class="content">
+<mat-accordion>
+    
+    <mat-expansion-panel *ngFor="let item of invoices">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ({{item.dueDate|date: 'MM/YYYY'}}) - {{item.user}} 
+        </mat-panel-title>
+        <mat-panel-description>
+          <span *ngIf="item.isPaid" style="color: green;"><mat-icon>check</mat-icon>Paga</span>
+          <span *ngIf="!item.isPaid" style="color: red;"><mat-icon>watch_later</mat-icon>Pendente</span>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      
+      <div class="info">
+        <span><strong>Valor da fatura: {{item.value| currency:'BRL':true:'1.2-2' }}</strong></span>
+        <button mat-flat-button color="accent" (click)="editInvoice(item.id)">
+            Editar
+        </button>
+        <button mat-flat-button color="warn" (click)="deleteInvoice(item.id)">
+            Deletar
+        </button>
+        <button mat-flat-button color="accent" (click)="statusInvoice(item.id)">
+            Definir status
+        </button>
+      </div>
+    </mat-expansion-panel>
+
+</mat-accordion>
+
+</section>
+

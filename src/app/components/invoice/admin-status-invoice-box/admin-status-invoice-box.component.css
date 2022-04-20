@@ -1,0 +1,38 @@
+section.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.title span {
+    font-size: 25px;
+    /* font-family: 'Mukta', sans-serif; */
+}
+
+section.title span mat-icon {
+    vertical-align: -4px;
+    margin-right: 1rem;
+}
+
+section.content {
+    margin-top: 1rem;
+}
+
+section.content h1 {
+    margin: 3rem 0;
+    font-size: 30px;
+    text-align: center;
+}
+
+section.content div.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+section.content div.buttons .del {
+    background-color: rgb(240, 150, 150);
+}
+
+section.content div.buttons .add {
+    background-color: rgb(150, 240, 150);
+}

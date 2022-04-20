@@ -1,0 +1,16 @@
+<section class="title">
+    <span><mat-icon>delete_outline</mat-icon>Deletar valor</span>
+    <button mat-mini-fab color="warn" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+</section>
+
+<section class="content">
+    <h1>Deseja deletar o valor?</h1>
+    <div class="buttons">
+        <button mat-raised-button class="del" (click)="onSubmit()">
+            <mat-icon>delete_outline</mat-icon>
+            Deletar valor
+        </button>
+    </div>
+</section>

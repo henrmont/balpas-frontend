@@ -1,0 +1,32 @@
+section.title {
+    margin: 1rem 0;
+}
+
+section.title span {
+    font-size: 20px;
+}
+
+section.title span mat-icon {
+    vertical-align: -5px;
+    margin-right: 1rem;
+}
+
+section.content {
+    width: 100%;
+}
+
+section.content .item {
+    width: 100%;
+    padding: 0.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 1rem 0;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(240,240,240);
+}
+
+section.content span mat-icon {
+    vertical-align: -5px;
+    margin-right: 1rem;
+}

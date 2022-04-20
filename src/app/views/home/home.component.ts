@@ -1,15 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-export var single = [
-  {
-    "name": "Líquido",
-    "value": 8940000
-  },
-  {
-    "name": "Impostos",
-    "value": 5000000
-  }
-];
+import { Router } from '@angular/router';
+import { AccountService } from 'src/app/components/account/account.service';
 
 @Component({
   selector: 'app-home',
@@ -18,37 +9,22 @@ export var single = [
 })
 export class HomeComponent implements OnInit {
 
-  single!: any;
-  view: any = [700, 400];
-
-  // options
-  gradient: boolean = true;
-  showLegend: boolean = true;
-  showLabels: boolean = true;
-  isDoughnut: boolean = false;
-
-  colorScheme: any = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
-  };
-
-  constructor() {
-    Object.assign(this, { single });
-  }
+  constructor(
+    private accountService: AccountService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    
-  }
+    this.accountService.getUserInfo().subscribe(
+      (response) => {
+        if (response.roles.indexOf("ROLE_USER") == -1) {
+          this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+            this.router.navigate(['admin']);
+          });
+        }
+      }
+    )
 
-  onSelect(data: any): void {
-    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
-  }
-
-  onActivate(data: any): void {
-    console.log('Activate', JSON.parse(JSON.stringify(data)));
-  }
-
-  onDeactivate(data: any): void {
-    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
 
 }

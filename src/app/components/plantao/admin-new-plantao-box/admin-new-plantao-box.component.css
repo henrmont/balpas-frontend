@@ -1,0 +1,68 @@
+section.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.title span {
+    font-size: 25px;
+    /* font-family: 'Mukta', sans-serif; */
+}
+
+section.title span mat-icon {
+    vertical-align: -4px;
+    margin-right: 1rem;
+}
+
+section.content {
+    margin-top: 1rem;
+}
+
+section.content {
+    z-index: 1000;
+}
+
+section.content div {
+    display: flex;
+    justify-content: center;
+}
+
+section.content form {
+    display: flex;
+    flex-direction: column;
+}
+
+section.content form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.content form div.cols2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+section.content form div.datetime {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 10px;
+}
+
+section.content mat-icon {
+    margin-right: 1rem;
+    vertical-align: -7px;
+}
+
+section.content form div .close {
+    background-color: rgb(240, 150, 150);
+}
+
+section.content form div.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+section.content form div.buttons .add {
+    background-color: rgb(150, 240, 150);
+}

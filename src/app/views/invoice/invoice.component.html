@@ -1,0 +1,20 @@
+<section class="title">
+    <span><mat-icon>request_page</mat-icon> Faturas</span>
+</section>
+<section class="content">
+    <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let item of invoices">
+            <div class="item">
+                <span>{{item.dueDate|date: 'MM/YYYY'}}</span>
+                <span><strong>{{item.value| currency:'BRL':true:'1.2-2' }}</strong></span>
+                <span *ngIf="item.isPaid" style="color: green;"><mat-icon>check</mat-icon>Paga</span>
+                <button *ngIf="!item.isPaid" mat-flat-button color="accent" (click)="fileSave(item.pdf, 'balpas-fatura')">
+                    <mat-icon>file_download</mat-icon>
+                </button>
+                <button *ngIf="!item.isPaid" mat-flat-button color="accent" disabled>
+                    <mat-icon>pix</mat-icon>
+                </button>
+            </div>
+        </mat-list-item>
+    </mat-list>
+</section>

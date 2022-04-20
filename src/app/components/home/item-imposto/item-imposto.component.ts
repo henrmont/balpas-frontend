@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'app-item-imposto',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemImpostoComponent implements OnInit {
 
-  constructor() { }
+  imposto!: any
+
+  constructor(
+    private homeService: HomeService
+  ) { }
 
   ngOnInit(): void {
+    this.homeService.getValuesData().subscribe(
+      (response) => {
+        this.imposto = response[1].value
+      }
+    )
   }
 
 }

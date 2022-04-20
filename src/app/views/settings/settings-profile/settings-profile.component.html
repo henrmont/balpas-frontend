@@ -1,63 +1,49 @@
-<div class="block">
+<div class="block" style="border-bottom: 2px solid rgb(100,100,100);">
     <span class="title">
         Foto do perfil
     </span>
     <div class="photo">
-        <img src="assets/img/profile.png" class="mat-elevation-z8">
-        <button mat-flat-button color="accent">
+        <img *ngIf="user.image" [src]="user.image" class="mat-elevation-z8">
+        <img *ngIf="!user.image" src="assets/img/user.png" class="mat-elevation-z8">
+        <button mat-flat-button color="accent" (click)="imageUpload.click()">
+            <input type="file" (change)="onImageChange($event)" [accept]="imageFileType" class="file-input" #imageUpload>
             Modificar
         </button>
-        <button mat-flat-button color="warn">
+        <button mat-flat-button color="warn" (click)="deleteImageProfile()">
             Excluir
         </button>
     </div>
 </div>
 
-<div class="block">
-    <span class="title">
-        Informações do perfil
-    </span>
-    <div class="info">
-        <div>
-            <span>Nome:</span>
+<form #form="ngForm" class="block">
+    <div>
+        <span class="title">
+            Informações do perfil
+        </span>
+        <div class="info">
+            <mat-form-field appearance="outline">
+                <mat-label>Nome do perfil</mat-label>
+                <input matInput [(ngModel)]="user.name" name="name" type="text">
+            </mat-form-field>
         </div>
-        <mat-form-field appearance="outline">
-            <mat-label>Nome do perfil</mat-label>
-            <input matInput>
-        </mat-form-field>
-    </div>
-    <div class="info">
-        <div>
-            <span>Bio:</span>
+        <div class="info">
+            <mat-form-field appearance="outline">
+                <mat-label>Telefone</mat-label>
+                <input matInput [(ngModel)]="user.phone" name="phone" type="text" mask="(00) 00000-0000">
+            </mat-form-field>
         </div>
-        <mat-form-field appearance="outline">
-            <mat-label>Biografia</mat-label>
-            <textarea matInput></textarea>
-        </mat-form-field>
-    </div>
-    <div class="info">
-        <div>
-            <span>Telefone:</span>
+        <div class="info">
+            <mat-form-field appearance="outline">
+                <mat-label>Endereço</mat-label>
+                <input matInput [(ngModel)]="user.address" name="address" type="text">
+            </mat-form-field>
         </div>
-        <mat-form-field appearance="outline">
-            <mat-label>Telefone</mat-label>
-            <input matInput>
-        </mat-form-field>
     </div>
-    <div class="info">
-        <div>
-            <span>Endereço:</span>
-        </div>
-        <mat-form-field appearance="outline">
-            <mat-label>Endereço</mat-label>
-            <input matInput>
-        </mat-form-field>
-    </div>
-</div>
 
-<div class="btns">
-    <button mat-flat-button color="accent">
-        <mat-icon>check</mat-icon>
-        Atualizar
-    </button>
-</div>
+    <div class="btns">
+        <button mat-flat-button color="accent" (click)="onSubmit()">
+            <mat-icon>check</mat-icon>
+            Atualizar
+        </button>
+    </div>
+</form>

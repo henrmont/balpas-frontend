@@ -1,9 +1,7 @@
-<div class="item">
+<mat-card class="item">
+    <mat-icon>masks</mat-icon>
     <div>
-        <mat-icon>today</mat-icon>
+        <span>{{plantao.local}}</span>
+        <span>{{plantao.startAt|date: 'dd/MM'}} - {{plantao.startAt|date: 'HH:mm'}}</span>
     </div>
-    <div>
-        <h1>Plantão</h1>
-        <h3>Início: 06:00</h3>
-    </div>
-</div>
+</mat-card>

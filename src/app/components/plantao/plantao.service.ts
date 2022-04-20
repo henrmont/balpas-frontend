@@ -22,6 +22,74 @@ export class PlantaoService {
     })
   }
 
+  adminRegisterPlantao(data: any): Observable<any> {
+    return this.http.post<any>(`${environment.baseUrl}/api/admin/register/plantao`, data)
+  }
+
+  adminGetPlantoes(): Observable<any> {
+    return this.http.get<any>(`${environment.baseUrl}/api/admin/get/plantoes`)
+  }
+
+  getPlantao(id: number): Observable<any> {
+    return this.http.get<any>(`${environment.baseUrl}/api/get/plantao/` + id);
+  }
+
+  adminEditPlantao(data: any): Observable<any> {
+    return this.http.post<any>(`${environment.baseUrl}/api/admin/edit/plantao`, data)
+  }
+
+  adminDeletePlantao(data: any): Observable<any> {
+    return this.http.post<any>(`${environment.baseUrl}/api/admin/delete/plantao`, data)
+  }
+
+  adminStatusPlantao(data: any): Observable<any> {
+    return this.http.post<any>(`${environment.baseUrl}/api/admin/status/plantao`, data)
+  }
+
+  adminValidatePlantao(data: any): Observable<any> {
+    return this.http.post<any>(`${environment.baseUrl}/api/admin/validate/plantao`, data)
+  }
+
+  getPlantaoValue(id: number): Observable<any> {
+    return this.http.get<any>(`${environment.baseUrl}/api/get/plantao/value/` + id);
+  }
+
+  getPlantoes(): Observable<any> {
+    return this.http.get<any>(`${environment.baseUrl}/api/get/plantoes`)
+  }
+
+  userDeletePlantao(data: any): Observable<any> {
+    return this.http.post<any>(`${environment.baseUrl}/api/delete/plantao`, data)
+  }
+
+  getPegaPlantoes(): Observable<any> {
+    return this.http.get<any>(`${environment.baseUrl}/api/get/pega/plantoes`)
+  }
+
+  userPegaPlantao(data: any): Observable<any> {
+    return this.http.post<any>(`${environment.baseUrl}/api/pega/plantao`, data)
+  }
+
+  userRegisterPlantao(data: any): Observable<any> {
+    return this.http.post<any>(`${environment.baseUrl}/api/register/plantao`, data)
+  }
+
+  getPlantoesSchedule(): Observable<any> {
+    return this.http.get<any>(`${environment.baseUrl}/api/get/plantoes/schedule`)
+  }
+
+  getTodayPlantoesSchedule(data: any): Observable<any> {
+    return this.http.get<any>(`${environment.baseUrl}/api/get/today/plantoes/schedule/` + data)
+  }
+
+  getLatestPlantao(): Observable<any> {
+    return this.http.get<any>(`${environment.baseUrl}/api/get/latest/plantao`)
+  }
+
+
+
+
+
   registerPlantao(data: any): Observable<any> {
     return this.http.post<any>(`${environment.baseUrl}/api/register/plantao`, data)
   }
@@ -57,6 +125,8 @@ export class PlantaoService {
   getAllPlantao(): Observable<any> {
     return this.http.get<any>(`${environment.baseUrl}/api/get/all/plantao`)
   }
+
+  
 
   getAllUser(): Observable<any> {
     return this.http.get<any>(`${environment.baseUrl}/api/get/all/user`)

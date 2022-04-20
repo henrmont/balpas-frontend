@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'app-item-liquido',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemLiquidoComponent implements OnInit {
 
-  constructor() { }
+  liquido!: any
+
+  constructor(
+    private homeService: HomeService
+  ) { }
 
   ngOnInit(): void {
+    this.homeService.getValuesData().subscribe(
+      (response) => {
+        this.liquido = response[0].value
+      }
+    )
   }
 
 }

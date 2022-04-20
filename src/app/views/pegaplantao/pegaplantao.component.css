@@ -11,6 +11,11 @@ section.title span mat-icon {
     margin-right: 1rem;
 }
 
+section.content mat-icon {
+    vertical-align: -5px;
+    margin-right: 0.5rem;
+}
+
 section.content div.info {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
@@ -20,7 +25,6 @@ section.content div.item {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-items: center;
     margin: 1rem 0;
 }
 
@@ -32,9 +36,14 @@ section.content div.item span:last-child {
     padding: 0.5rem 1.5rem;
 }
 
-section.content mat-icon {
-    vertical-align: -5px;
-    margin-right: 0.5rem;
+section.content div.col2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+section.content div.col3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 mat-panel-title {
@@ -43,4 +52,15 @@ mat-panel-title {
 
 mat-panel-description {
     width: 30%;
+}
+
+div.bottom {
+    width: 200%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+div.bottom button {
+    width: 50%;
 }

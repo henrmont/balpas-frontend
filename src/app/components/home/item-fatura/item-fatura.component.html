@@ -1,9 +1,8 @@
-<div class="item">
+<mat-card class="item">
+    <mat-icon>masks</mat-icon>
     <div>
-        <mat-icon>request_quote</mat-icon>
+        <span>Prox. Fatura</span>
+        <span *ngIf="invoice.status" style="color: green;">Fatura Paga</span>
+        <span *ngIf="!invoice.status"><button mat-flat-button color="accent" (click)="fileSave(invoice.pdf, 'balpas-fatura')">Vencimento: {{invoice.vencimento|date: 'dd/MM'}}</button></span>
     </div>
-    <div>
-        <h1>Fatura</h1>
-        <h3>Vencimento: 13/06</h3>
-    </div>
-</div>
+</mat-card>

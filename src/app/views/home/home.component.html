@@ -3,48 +3,12 @@
 </section>
 <section class="content">
     <div class="chart">
-        <ngx-charts-pie-chart
-            [view]="view"
-            [scheme]="colorScheme"
-            [results]="single"
-            [gradient]="gradient"
-            [legend]="showLegend"
-            [doughnut]="isDoughnut"
-            (select)="onSelect($event)"
-            (activate)="onActivate($event)"
-            (deactivate)="onDeactivate($event)"
-            legendTitle="Legenda"
-        >
-        </ngx-charts-pie-chart>
+        <app-user-dashboard-chart></app-user-dashboard-chart>
     </div>
     <div class="info">
-        <mat-card class="item">
-            <mat-icon>attach_money</mat-icon>
-            <div>
-                <span>Líquido Mensal</span>
-                <span>R$ 17.513,00</span>
-            </div>
-        </mat-card>
-        <mat-card class="item">
-            <mat-icon>money_off_csred</mat-icon>
-            <div>
-                <span>Impostos</span>
-                <span>R$ 17.513,00</span>
-            </div>
-        </mat-card>
-        <mat-card class="item">
-            <mat-icon>request_quote</mat-icon>
-            <div>
-                <span>Prox. Fatura</span>
-                <span>R$ 17.513,00</span>
-            </div>
-        </mat-card>
-        <mat-card class="item">
-            <mat-icon>masks</mat-icon>
-            <div>
-                <span>Prox. Plantão</span>
-                <span>16/03 - 19:00</span>
-            </div>
-        </mat-card>
+        <app-item-liquido></app-item-liquido>
+        <app-item-imposto></app-item-imposto>
+        <app-item-fatura></app-item-fatura>
+        <app-item-plantao></app-item-plantao>
     </div>
 </section>

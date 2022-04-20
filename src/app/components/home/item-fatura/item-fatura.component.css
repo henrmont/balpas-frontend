@@ -1,28 +1,31 @@
 .item {
-    margin-top: 1rem;
-    margin-left: 1rem;
     display: grid;
-    grid-template-columns: 1fr 8fr;
-    gap: 5rem;
+    grid-template-columns: 1fr 2fr;
+    width: 100%;
+    height: auto;
 }
 
 .item mat-icon {
-    font-size: 5rem;
-    color: gray;
+    margin: 0;
+    font-size: 80px;
 }
 
-.item div:last-child {
-    padding: 10px;
-    padding-left: 0;
-    padding-top: 0;
+.item div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.item div:last-child h1 {
-    font-weight: 400;
-    font-size: 2rem;
+.item div span:first-child {
+    padding: 1rem 0;
 }
 
-.item div:last-child h3 {
-    font-size: 1.5rem;
-    font-weight: 200;
+.item div span:first-child {
+    font-size: 22px;
+}
+
+.item div span:last-child {
+    font-size: 27px;
+    margin-bottom: 1rem;
 }

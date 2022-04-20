@@ -1,0 +1,26 @@
+<section class="title">
+    <span><mat-icon>published_with_changes</mat-icon> Validar plantão</span>
+    <button mat-mini-fab color="warn" (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button>
+</section>
+
+<section class="content" *ngIf="isValid">
+    <h1>Deseja invalidar o plantão?</h1>
+    <div class="buttons">
+        <button mat-raised-button class="del" (click)="onSubmit()">
+            <mat-icon>close</mat-icon>
+            Invalidar plantão
+        </button>
+    </div>
+</section>
+
+<section class="content" *ngIf="!isValid">
+    <h1>Deseja validar o plantão?</h1>
+    <div class="buttons">
+        <button mat-raised-button class="add" (click)="onSubmit()">
+            <mat-icon>done</mat-icon>
+            Validar plantão
+        </button>
+    </div>
+</section>

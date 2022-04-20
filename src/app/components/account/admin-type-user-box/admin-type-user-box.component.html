@@ -1,0 +1,27 @@
+<section class="title">
+    <span><mat-icon>price_check</mat-icon>Status do pagamento</span>
+    <button mat-mini-fab color="warn" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+</section>
+
+<section class="content">
+    <form #form="ngForm">
+        <mat-form-field class="example-full-width" appearance="outline" required>
+            <mat-label>Nota:</mat-label>
+            <mat-select [(ngModel)]="user.isResident" name="resident">
+                <mat-option *ngFor="let item of resident" [value]="item.value">
+                    {{item.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="buttons">
+            <button mat-raised-button type="submit" class="add" [disabled]="form.form.invalid" (click)="onSubmit()">
+                <mat-icon>check</mat-icon>
+                Alterar status
+            </button>
+        </div>
+    </form>
+</section>
+
+

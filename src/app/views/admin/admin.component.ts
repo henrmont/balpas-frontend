@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AccountService } from 'src/app/components/account/account.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private accountService: AccountService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.accountService.getUserInfo().subscribe(
+      (response) => {
+        if (response.roles.indexOf("ROLE_ADMIN") == -1) {
+          this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+            this.router.navigate(['logout']);
+          });
+        }
+      }
+    )
   }
 
 }

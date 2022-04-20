@@ -1,0 +1,76 @@
+section.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.title span {
+    font-size: 25px;
+    /* font-family: 'Mukta', sans-serif; */
+}
+
+section.title span mat-icon {
+    vertical-align: -4px;
+    margin-right: 1rem;
+}
+
+section.content {
+    margin-top: 1rem;
+}
+
+section.content mat-card {
+    background-color: rgb(240,240,250);
+    margin-bottom: 1rem;
+}
+
+section.content mat-card:last-child {
+    background-color: rgb(240,240,250);
+}
+
+
+section.content div.cols2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+section.content div.datetime {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 10px;
+}
+
+section.content mat-icon {
+    margin-right: 1rem;
+    vertical-align: -7px;
+}
+
+section.content .item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem;
+}
+
+section.content .item .title {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+section.content .item span:last-child {
+    margin-left: 1rem;
+}
+
+section.content form div .close {
+    background-color: rgb(240, 150, 150);
+}
+
+section.content form div.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+section.content form div.buttons .add {
+    background-color: rgb(150, 240, 150);
+}

@@ -1,0 +1,39 @@
+<section class="title">
+    <span><mat-icon>paid</mat-icon>Valores do plantão</span>
+    <button mat-mini-fab color="warn" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+</section>
+
+<section class="content">
+    <div>
+        <app-taxes-chart [id]="data.id"></app-taxes-chart>
+    </div>
+    <div class="taxes">
+        <button mat-raised-button class="add" (click)="newTaxe()">
+            <mat-icon>add</mat-icon>
+            Novo valor
+        </button>
+        <div *ngIf="taxes.length == 0">
+            <h2>Nenhum valor foi cadastrado</h2>
+        </div>
+        <div *ngIf="taxes.length != 0" class="items">
+            <span><strong>Nome</strong></span>
+            <span><strong>Tipo</strong></span>
+            <span><strong>Valor</strong></span>
+        </div>
+        <div *ngFor="let item of taxes" class="items">
+            <span>{{item.name}}</span>
+            <span *ngIf="item.type">Percentual</span>
+            <span *ngIf="!item.type">Integral</span>
+            <span>{{item.value}}</span>
+            <button mat-raised-button color="accent" (click)="editTaxe(item.id)">
+                <mat-icon style="margin-right: 0;">edit</mat-icon>
+            </button>
+            <button mat-raised-button color="warn" (click)="deleteTaxe(item.id)">
+                <mat-icon style="margin-right: 0;">delete_outline</mat-icon>
+            </button>
+        </div>
+    </div>
+
+</section>

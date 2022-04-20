@@ -1,0 +1,20 @@
+<section class="title">
+    <span><mat-icon>published_with_changes</mat-icon> Status da fatura</span>
+    <button mat-mini-fab color="warn" (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button>
+</section>
+
+<section class="content">
+    <h1>Deseja mudar o status da fatura?</h1>
+    <div class="buttons">
+        <button mat-raised-button *ngIf="isPaid" class="del" (click)="onSubmit()">
+            <mat-icon>close</mat-icon>
+            Definir como pendente
+        </button>
+        <button mat-raised-button *ngIf="!isPaid" class="add" (click)="onSubmit()">
+            <mat-icon>check</mat-icon>
+            Definir como paga
+        </button>
+    </div>
+</section>

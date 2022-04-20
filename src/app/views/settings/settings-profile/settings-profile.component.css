@@ -1,50 +1,53 @@
-div.block {
+.block {
     margin-top: 2rem;
-    border-bottom: 2px solid rgb(100,100,100);
     padding-bottom: 2rem;
 }
 
-div.block:first-child {
+.block:first-child {
     margin-top: 0;
 }
 
-div.block span.title {
+.block span.title {
     font-size: 25px;
     font-family: 'Mukta', sans-serif;
 }
 
-div.block div.photo {
+.block div.photo {
     margin-top: 1rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-div.block div.photo button {
+.block div.photo button {
     width: 20%;
 }
 
-div.block div.photo img {
+.block div.photo img {
     width: 150px;
 }
 
-div.block div.info {
-    width: 80%;
+.block div.info {
+    width: 90%;
     padding: 0 5%;
     margin-top: 1rem;
-    column-gap: 20px;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+    display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-div.block div.info div {
+.block div.info mat-form-field {
+    width: 100%;
+}
+
+.block div.info div {
+    width: 100%;
     padding-top: .5rem;
     font-family: 'Titillium Web', sans-serif;
     font-size: 17px;
     display: flex;
     justify-content: flex-end;
+    align-items: flex-start;
 }
 
 div.btns {
@@ -61,5 +64,9 @@ div.btns button {
 div.btns button mat-icon {
     vertical-align: -5px;
     margin-right: 1rem;
+}
+
+.file-input {
+    display: none;
 }
 

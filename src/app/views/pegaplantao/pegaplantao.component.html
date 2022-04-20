@@ -1,125 +1,69 @@
 <section class="title">
-    <span><mat-icon>medical_services</mat-icon> Pega Plantão</span>
+    <span><mat-icon>masks</mat-icon> Plantões</span>
 </section>
 <section class="content">
     <mat-accordion>
 
-        <mat-expansion-panel>
-
+        <mat-expansion-panel *ngFor="let item of plantoes">
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                16/03 (8:00) - HOSPITAL METROPOLITANO DE CUIABÁ
+                  {{item.start_at|date: 'dd/MM/YYYY'}} ({{item.start_at|date: 'HH:mm'}}) - {{item.local}}
                 </mat-panel-title>
                 <mat-panel-description>
-                <span><mat-icon>check_circle_outline</mat-icon>Disponível</span>
+                <span>{{item.value| currency:'BRL':true:'1.2-2' }}</span>
                 </mat-panel-description>
             </mat-expansion-panel-header>
+            
+            <div class="col2">
+              <div>
+                <div class="col3">
+                  <div class="item">
+                    <span>Data:</span>
+                    <span>{{item.start_at|date: 'dd/MM/YYYY'}}</span>
+                  </div>
+                  <div class="item">
+                    <span>Inicio:</span>
+                    <span>{{item.start_at|date: 'HH:mm'}}</span>
+                  </div>
+                  <div class="item">
+                    <span>Duração:</span>
+                    <span>{{item.duration}}h</span>
+                  </div>
+                </div>
+                <div class="col2">
+                  <div class="item">
+                    <span>Tipo:</span>
+                    <span>{{item.type}}</span>
+                  </div>
+                  <div class="item" *ngIf="item.other">
+                    <span>Outros:</span>
+                    <span>{{item.other}}</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <span>Local:</span>
+                  <span>{{item.local}}</span>
+                </div>
+                <div class="item">
+                  <span>Empresa:</span>
+                  <span>{{item.company}}</span>
+                </div>
+                <div class="item">
+                  <span>Valor:</span>
+                  <span>{{item.value| currency:'BRL':true:'1.2-2' }}</span>
+                </div>
 
-            <div class="info">
-                <div>
-                    <div class="item">
-                        <span>Data:</span>
-                        <span>13/03/2022</span>
-                    </div>
-                    <div class="item">
-                        <span>Inicio:</span>
-                        <span>7:00</span>
-                    </div>
-                    <div class="item">
-                        <span>Duração:</span>
-                        <span>12h</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="item">
-                        <span>Tipo:</span>
-                        <span>Enfermaria</span>
-                    </div>
-                    <div class="item">
-                        <span>Outros</span>
-                        <span>teste</span>
-                    </div>
-                    <div class="item">
-                        <span>Valor</span>
-                        <span>R$ 1.800,00</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="item">
-                        <span>Local:</span>
-                        <span>Hospital Metropolitano de Cuiabá</span>
-                    </div>
-                    <div class="item">
-                        <span>Empresa:</span>
-                        <span>Promed serviços em medicina especializada ltda</span>
-                    </div>
-                    <div class="item">
-                        <button mat-flat-button color="accent">
-                            <mat-icon>volunteer_activism</mat-icon>
-                            Pegar esse plantão
-                        </button>
-                    </div>
-                </div>
-            </div>
+              </div>
+              <div>
+                <app-taxes-chart [id]="item.id"></app-taxes-chart>
+              </div>
 
-        </mat-expansion-panel>
-
-        <mat-expansion-panel>
-
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                16/03 (8:00) - HOSPITAL METROPOLITANO DE CUIABÁ
-                </mat-panel-title>
-                <mat-panel-description>
-                <span><mat-icon>highlight_off</mat-icon>Colidindo</span>
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-
-            <div class="info">
-                <div>
-                    <div class="item">
-                        <span>Data:</span>
-                        <span>13/03/2022</span>
-                    </div>
-                    <div class="item">
-                        <span>Inicio:</span>
-                        <span>7:00</span>
-                    </div>
-                    <div class="item">
-                        <span>Duração:</span>
-                        <span>12h</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="item">
-                        <span>Tipo:</span>
-                        <span>Enfermaria</span>
-                    </div>
-                    <div class="item">
-                        <span>Outros</span>
-                        <span>teste</span>
-                    </div>
-                    <div class="item">
-                        <span>Valor</span>
-                        <span>R$ 1.800,00</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="item">
-                        <span>Local:</span>
-                        <span>Hospital Metropolitano de Cuiabá</span>
-                    </div>
-                    <div class="item">
-                        <span>Empresa:</span>
-                        <span>Promed serviços em medicina especializada ltda</span>
-                    </div>
-                    <div class="item">
-                        <button mat-flat-button color="accent">
-                            <mat-icon>volunteer_activism</mat-icon>
-                            Pegar esse plantão
-                        </button>
-                    </div>
-                </div>
+              <div class="bottom">
+                <button mat-flat-button color="accent" (click)="getPlantao(item.id)">
+                    <mat-icon>volunteer_activism</mat-icon>
+                    Pegar esse plantão
+                </button>
+              </div>
             </div>
 
         </mat-expansion-panel>

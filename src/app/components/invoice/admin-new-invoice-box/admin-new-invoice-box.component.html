@@ -1,0 +1,45 @@
+<section class="title">
+    <span><mat-icon>request_quote</mat-icon>Nova fatura</span>
+    <button mat-mini-fab color="warn" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+</section>
+
+<section class="content">
+    <form #form="ngForm" class="example-form">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Usuário</mat-label>
+            <input matInput [(ngModel)]="invoice.user" type="email" name="user" [formControl]="formControl" [matAutocomplete]="auto" (keyup)="onKeyUp()" (blur)="onBlur()" required>
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of options" [value]="option.email">
+                    {{option.email}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <div class="cols2">
+            <mat-form-field appearance="outline">
+                <mat-label>Vencimento</mat-label>
+                <input matInput [matDatepicker]="dueDate" readonly [(ngModel)]="invoice.dueDate" name="dueDate" required>
+                <mat-datepicker-toggle matSuffix [for]="dueDate"></mat-datepicker-toggle>
+                <mat-datepicker #dueDate></mat-datepicker>
+            </mat-form-field>
+            <button mat-flat-button *ngIf="!isAttached" class="natt" (click)="fileUpload.click()" style="margin-top: 3px;" #attach>
+                <input type="file" (change)="onFileChange($event)" [accept]="fileType" class="file-input" #fileUpload>
+                <mat-icon>attach_file</mat-icon>
+                <span>Anexar Boleto</span>
+            </button>
+            <button mat-flat-button *ngIf="isAttached" class="att" (click)="fileUpload.click()" style="margin-top: 3px;" #attach>
+                <input type="file" (change)="onFileChange($event)" [accept]="fileType" class="file-input" #fileUpload>
+                <mat-icon>attach_file</mat-icon>
+                <span>Anexar Boleto</span>
+            </button>
+        </div>
+        <div class="buttons">
+            <button mat-raised-button type="submit" class="add" [disabled]="form.form.invalid || !isAttached || !isUser" (click)="onSubmit()">
+                <mat-icon>add</mat-icon>
+                Registrar fatura
+            </button>
+        </div>
+    </form>
+</section>
+

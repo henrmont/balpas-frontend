@@ -6,7 +6,6 @@ import { AdminPlantaoComponent } from './views/admin/admin-plantao/admin-plantao
 import { AdminFaturaComponent } from './views/admin/admin-fatura/admin-fatura.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { PegaplantaoComponent } from './views/pegaplantao/pegaplantao.component';
-import { FaturaComponent } from './views/fatura/fatura.component';
 import { PlantaoComponent } from './views/plantao/plantao.component';
 import { ScheduleComponent } from './views/schedule/schedule.component';
 import { HomeComponent } from './views/home/home.component';
@@ -20,6 +19,11 @@ import { SiteComponent } from './views/site/site.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DocHomeComponent } from './views/doc/doc-home/doc-home.component';
+import { InvoiceComponent } from './views/invoice/invoice.component';
+import { AdminInvoiceComponent } from './views/admin/admin-invoice/admin-invoice.component';
+import { AdminUsersComponent } from './views/admin/admin-users/admin-users.component';
+import { AdminDashboardComponent } from './views/admin/admin-dashboard/admin-dashboard.component';
+import { SettingsPasswordComponent } from './views/settings/settings-password/settings-password.component';
 
 const routes: Routes = [
   {
@@ -50,7 +54,7 @@ const routes: Routes = [
     path: 'fatura',
     component: AppLayoutComponent,
     children: [
-      { path: '', component: FaturaComponent },
+      { path: '', component: InvoiceComponent },
     ],
     canActivate: [AccountGuard]
   },
@@ -72,6 +76,7 @@ const routes: Routes = [
         children: [
           { path: '', redirectTo: 'profile', pathMatch: 'full' },
           { path: 'profile', component: SettingsProfileComponent },
+          { path: 'password', component: SettingsPasswordComponent },
           // { path: 'plantao', component: AdminPlantaoComponent },
         ]
       }
@@ -86,10 +91,12 @@ const routes: Routes = [
         path: '',
         component: AdminComponent,
         children: [
-          { path: '', redirectTo: 'fatura', pathMatch: 'full' },
-          { path: 'fatura', component: AdminFaturaComponent },
-          { path: 'plantao', component: AdminPlantaoComponent },
+          { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+          { path: 'fatura', component: AdminInvoiceComponent },
+          { path: 'plantao', component: AdminPlantaoComponent, data: [ { isAdmin: true } ] },
           { path: 'inscricao', component: AdminInscricaoComponent },
+          { path: 'users', component: AdminUsersComponent },
+          { path: 'dashboard', component: AdminDashboardComponent },
         ]
       },
     ],

@@ -1,0 +1,29 @@
+<section class="title">
+    <span><mat-icon>attach_file</mat-icon>Anexos do Plantão</span>
+    <button mat-mini-fab color="warn" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+</section>
+
+<section class="content">
+
+    <div class="attach">
+
+        <div *ngIf="attachs.length == 0">
+            <h2>Nenhum anexo foi cadastrado</h2>
+        </div>
+        <div *ngIf="attachs.length != 0" class="items">
+            <span><strong>Nome</strong></span>
+        </div>
+        <div *ngFor="let item of attachs" class="items">
+            <span>{{item.name}}</span>
+            <button mat-raised-button color="accent" (click)="fileSave(item.file, item.name)">
+                <mat-icon style="margin-right: 0;">file_download</mat-icon>
+            </button>
+            <button mat-raised-button color="warn" disabled>
+                <mat-icon style="margin-right: 0;">delete_outline</mat-icon>
+            </button>
+        </div>
+    </div>
+
+</section>

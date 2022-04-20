@@ -4,102 +4,20 @@
 <section class="content">
     <mat-accordion>
 
-        <mat-expansion-panel>
-
+        <mat-expansion-panel *ngFor="let item of plantoes">
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                16/03 (8:00) - HOSPITAL JULIO MÜLLER
+                  {{item.start_at|date: 'dd/MM/YYYY'}} ({{item.start_at|date: 'HH:mm'}}) - {{item.local}}
                 </mat-panel-title>
                 <mat-panel-description>
-                <span><mat-icon>watch_later</mat-icon> Agendado</span>
-                </mat-panel-description>
-            </mat-expansion-panel-header>
 
-            <mat-tab-group mat-align-tabs="center" [dynamicHeight]="true">
-                <mat-tab>
-                  <ng-template mat-tab-label>
-                    <mat-icon class="example-tab-icon">medical_information</mat-icon>
-                    Informações Gerais
-                  </ng-template>
-                  
-                  <div class="info">
-                    <div>
-                      <div class="item">
-                        <span>Data:</span>
-                        <span>13/03/2022</span>
-                      </div>
-                      <div class="item">
-                        <span>Inicio:</span>
-                        <span>7:00</span>
-                      </div>
-                      <div class="item">
-                        <span>Duração:</span>
-                        <span>12h</span>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="item">
-                        <span>Tipo:</span>
-                        <span>Enfermaria</span>
-                      </div>
-                      <div class="item">
-                        <span>Outros</span>
-                        <span>teste</span>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="item">
-                        <span>Local:</span>
-                        <span>Hospital Metropolitano de Cuiabá</span>
-                      </div>
-                      <div class="item">
-                        <span>Empresa:</span>
-                        <span>Promed serviços em medicina especializada ltda</span>
-                      </div>
-                      <div class="item">
-                        <span>Valor:</span>
-                        <span>R$ 2.300,00</span>
-                      </div>
-                    </div>
-                  </div>
+                  <span *ngIf="item.note == false" style="color: red;"><mat-icon>close</mat-icon>Nota não emitida</span>
+                  <span *ngIf="item.note == true" style="color: green;"><mat-icon>check</mat-icon>Nota emitida</span>
+                  <span *ngIf="item.note == null"><mat-icon>close</mat-icon>Sem nota</span>
 
-                </mat-tab>
-              
-                <mat-tab>
-                  <ng-template mat-tab-label>
-                    <mat-icon class="example-tab-icon">monetization_on</mat-icon>
-                    Informações financeiras
-                  </ng-template>
-                  <div>
-                    <ngx-charts-pie-chart
-                        [view]="view"
-                        [scheme]="colorScheme"
-                        [results]="single"
-                        [gradient]="gradient"
-                        [legendPosition]="legendPosition"
-                        [legend]="showLegend"
-                        [doughnut]="isDoughnut"
-                        (select)="onSelect($event)"
-                        (activate)="onActivate($event)"
-                        (deactivate)="onDeactivate($event)"
-                        legendTitle="Legenda"
-                    >
-                    </ngx-charts-pie-chart>
-                  </div>
-                </mat-tab>
-                
-            </mat-tab-group>
-              
-        </mat-expansion-panel>
+                  <span *ngIf="item.payment" style="color: green; margin-left: 1.5rem;"><mat-icon>check</mat-icon>Plantão pago</span>
+                  <span *ngIf="!item.payment" style="color: red; margin-left: 1.5rem;"><mat-icon>close</mat-icon>Pagamento pendente</span>
 
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                16/03 (8:00) - HOSPITAL METROPOLITANO DE CUIABÁ
-                </mat-panel-title>
-                <mat-panel-description>
-                <span><mat-icon>check</mat-icon> Nota solicitada</span>
-                <span style="margin-left: 1.5rem;"><mat-icon>check</mat-icon> Plantão pago</span>
                 </mat-panel-description>
             </mat-expansion-panel-header>
             
@@ -108,66 +26,78 @@
                 <div class="col3">
                   <div class="item">
                     <span>Data:</span>
-                    <span>13/03/2022</span>
+                    <span>{{item.start_at|date: 'dd/MM/YYYY'}}</span>
                   </div>
                   <div class="item">
                     <span>Inicio:</span>
-                    <span>7:00</span>
+                    <span>{{item.start_at|date: 'HH:mm'}}</span>
                   </div>
                   <div class="item">
                     <span>Duração:</span>
-                    <span>12h</span>
+                    <span>{{item.duration}}h</span>
                   </div>
                 </div>
                 <div class="col2">
                   <div class="item">
                     <span>Tipo:</span>
-                    <span>Enfermaria</span>
+                    <span>{{item.type}}</span>
                   </div>
-                  <div class="item">
-                    <span>Outros</span>
-                    <span>teste</span>
+                  <div class="item" *ngIf="item.other">
+                    <span>Outros:</span>
+                    <span>{{item.other}}</span>
                   </div>
                 </div>
                 <div class="item">
                   <span>Local:</span>
-                  <span>Hospital Metropolitano de Cuiabá</span>
+                  <span>{{item.local}}</span>
                 </div>
                 <div class="item">
                   <span>Empresa:</span>
-                  <span>Promed serviços em medicina especializada ltda</span>
+                  <span>{{item.company}}</span>
                 </div>
                 <div class="item">
                   <span>Valor:</span>
-                  <span>R$ 2.300,00</span>
+                  <span>{{item.value| currency:'BRL':true:'1.2-2' }}</span>
                 </div>
 
               </div>
               <div>
-                <ngx-charts-pie-chart
-                  [view]="view"
-                  [scheme]="colorScheme"
-                  [results]="single"
-                  [gradient]="gradient"
-                  [legend]="showLegend"
-                  [legendPosition]="legendPosition"
-                  [doughnut]="isDoughnut"
-                  (select)="onSelect($event)"
-                  (activate)="onActivate($event)"
-                  (deactivate)="onDeactivate($event)"
-                  legendTitle="Legenda"
-                >
-                </ngx-charts-pie-chart>
+                <app-taxes-chart [id]="item.id"></app-taxes-chart>
               </div>
 
-              <div class="bottom">
-                <button mat-flat-button color="warn">
-                  <mat-icon>close</mat-icon>
-                  Remover plantão
+              <div class="bottom" *ngIf="!item.private">
+                <button mat-flat-button color="accent" disabled>
+                  Editar
                 </button>
-                <button mat-flat-button color="accent">
-                  <mat-icon>attach_file</mat-icon>
-                  Ver anexos
+                <button mat-flat-button color="warn" (click)="userDeletePlantao(item.id)">
+                  Excluir
+                </button>
+                <button mat-flat-button color="accent" disabled>
+                  Valores
+                </button>
+                <button mat-flat-button color="accent" disabled>
+                  Status
+                </button>
+                <button mat-flat-button color="accent" (click)="userAttachPlantao(item.id)">
+                  Anexo
+                </button>
+              </div>
+
+              <div class="bottom" *ngIf="item.private">
+                <button mat-flat-button color="accent" (click)="editPlantao(item.id)">
+                  Editar
+                </button>
+                <button mat-flat-button color="warn" (click)="deletePlantao(item.id)">
+                  Excluir
+                </button>
+                <button mat-flat-button color="accent" (click)="taxesPlantao(item.id)">
+                  Valores
+                </button>
+                <button mat-flat-button color="accent" (click)="statusPlantao(item.id)">
+                  Status
+                </button>
+                <button mat-flat-button color="accent" (click)="attachPlantao(item.id)">
+                  Anexo
                 </button>
               </div>
             </div>
